@@ -1,14 +1,11 @@
-import './styles/App.css'
-import {NewsList} from "./NewList";
+import {RouterProvider} from "react-router-dom";
+import {Router} from "./providers/routes/Router";
+import './styles/index.scss'
 
 function App() {
 
-  return (
-      <>
-        <h1>text</h1>
-        <NewsList />
-      </>
-  )
+  return <RouterProvider router={Router} />
+
 }
 
 export default App
