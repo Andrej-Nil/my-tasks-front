@@ -1,0 +1,10 @@
+.guest-menu{
+  display: flex;
+  gap: 15px;
+}
+
+.guest-menu__link{
+  &:hover{
+    text-decoration: underline;
+  }
+}
