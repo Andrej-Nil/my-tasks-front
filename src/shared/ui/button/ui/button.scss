@@ -1,0 +1,43 @@
+.btn{
+  background: #ddd;
+  outline: none;
+  border: none;
+  font-family: var(--main-font);
+  font-size: 1.6rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn--blue{
+  background: #005dff;
+  color: #fff;
+  &:hover{
+    background: #1475ff;
+  }
+}
+
+.btn--red{
+  background: #d71613;
+  color: #fff;
+  &:hover{
+    background: #ef3c39;
+  }
+}
+
+
+.btn--green{
+  background: #008541;
+  color: #fff;
+  &:hover{
+    background: #019d4f;
+  }
+}
+
+.btn--orange{
+  background: #FFBE00;
+  color: var(--main-color);
+  &:hover{
+    background: #ffd179;
+  }
+}
