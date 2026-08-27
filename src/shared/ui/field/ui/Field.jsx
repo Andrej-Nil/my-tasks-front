@@ -1,7 +1,7 @@
 import './field.scss';
 
 const Field = (props) => {
-    const {label, name = "", type = "text",  placeholder=""} = props;
+    const {label, name = "", type = "text", onChange,  placeholder=""} = props;
     return (
         <div className="field">
             <label className="field__label" htmlFor={name}>{label}</label>
@@ -10,6 +10,7 @@ const Field = (props) => {
                 type={type}
                 name={name}
                 id={name}
+                onChange={onChange}
                 placeholder={placeholder}
             />
         </div>

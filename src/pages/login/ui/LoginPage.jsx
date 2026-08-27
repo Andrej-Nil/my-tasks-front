@@ -1,5 +1,11 @@
+import {LoginForm} from "@/features/login-by-email";
+
 const LoginPage = () => {
-    return <h1>LoginPage</h1>
+    return (
+        <div className="container small">
+            <LoginForm />
+        </div>
+    )
 }
 
 export default LoginPage;

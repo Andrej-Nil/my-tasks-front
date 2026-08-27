@@ -1,11 +1,11 @@
 import './form.scss';
-import Button from "@/shared/ui/button/index.js";
+import Button from "@/shared/ui/button";
 import {Link} from "react-router-dom";
 
 const Form = (props) => {
-    const {children, title, btnText, to, toText = "Перейти"} = props;
+    const {children, title, btnText, to, toText = "Перейти", onSubmit} = props;
     return (
-        <form className="form">
+        <form className="form" onSubmit={onSubmit}>
 
             <p className="form__title">{title}</p>
 
