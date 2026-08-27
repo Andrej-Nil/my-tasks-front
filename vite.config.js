@@ -8,5 +8,9 @@ export default defineConfig( {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
+    },
+    server: {
+        host: 'app.my-tasks.local',
+        port: 5173,
     }
 })

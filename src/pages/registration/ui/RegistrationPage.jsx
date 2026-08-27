@@ -1,5 +1,11 @@
+import {RegisterForm} from "@/features/register-by-email/index.js";
+
 const RegistrationPage = () => {
-    return <h1>RegistrationPage</h1>
+    return (
+        <div className="container small">
+            <RegisterForm />
+        </div>
+    )
 }
 
 export default RegistrationPage;

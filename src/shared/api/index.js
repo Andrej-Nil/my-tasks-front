@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-const index = axios.create({
-    // Главный адрес вашего Laravel бэкенда на Open Server
-    baseURL: 'http://my-tasks-backend.local',
+const api = axios.create({
+    baseURL: 'http://api.my-tasks.local',
 
-    // 🔥 КРИТИЧЕСКИ ВАЖНО для Laravel Breeze:
-    // Разрешает автоматическую отправку и получение Cookies (кук авторизации)
     withCredentials: true,
+    withXSRFToken: true,
 
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
@@ -14,4 +12,4 @@ const index = axios.create({
     }
 });
 
-export default index;
+export default api;
