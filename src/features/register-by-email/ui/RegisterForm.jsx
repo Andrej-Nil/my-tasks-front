@@ -13,6 +13,7 @@ const RegisterForm = () => {
 
         try{
            const response = await registerByEmail(name, email, password);
+           console.log(response)
         }catch (error){
 
         }finally {
@@ -34,6 +35,7 @@ const RegisterForm = () => {
              value={name}
              onChange={(e) => setName(e.target.value)}
              placeholder="Ваше имя"
+             autoComplete="name"
          />
 
           <Field
@@ -43,6 +45,7 @@ const RegisterForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="vasha@pochta.ru"
+              autoComplete="email"
           />
 
           <Field
@@ -52,6 +55,7 @@ const RegisterForm = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Придумайте пароль"
+              autoComplete="new-password"
           />
       </Form>
     )

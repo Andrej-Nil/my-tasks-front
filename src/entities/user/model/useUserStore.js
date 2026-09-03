@@ -1,4 +1,5 @@
 import {create} from 'zustand';
+import api from "@/shared/api/index.js";
 
 export const useUserStore = create((set) => ({
     user: null,
@@ -6,11 +7,12 @@ export const useUserStore = create((set) => ({
     clearUser: () => set({ user: null }),
     isAuthChecked: false,
     checkAuth: async () => {
+        console.log('CHECK AUTH');
         try {
             const response = await api.get('/api/user');
             set({ user: response.data, isAuthChecked: true });
         } catch (error) {
-            // Если Laravel вернул 401 (не авторизован), сбрасываем в null
+
             set({ user: null, isAuthChecked: true });
         }
     },

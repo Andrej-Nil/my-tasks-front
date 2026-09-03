@@ -8,3 +8,27 @@
     text-decoration: underline;
   }
 }
+
+
+.user-menu{
+
+}
+
+.user-menu__header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.user-icon{
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.user-name{
+
+}
