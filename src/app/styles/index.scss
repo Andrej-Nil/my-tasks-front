@@ -2,12 +2,18 @@ $main-font: Arial, Helvetica, sans-serif;
 $title-font: 'Trebuchet MS', sans-serif;
 $main-font-size: 1.6rem;
 $main-color: #231F20;
+$danger-color: #d71613;
+$light-danger-color: #ef3c39;
 
 :root {
   --main-font: #{$main-font};
   --title-font: #{$title-font};
   --main-font-size: #{$main-font-size};
   --main-color: #{$main-color};
+
+  --danger-color: #{$danger-color};
+  --light-danger-color: #{$light-danger-color};
+
 }
 *{
   margin: 0;

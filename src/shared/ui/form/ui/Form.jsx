@@ -3,7 +3,9 @@ import Button from "@/shared/ui/button";
 import {Link} from "react-router-dom";
 
 const Form = (props) => {
-    const {children, title, btnText, to, toText = "Перейти", onSubmit} = props;
+    const {children, title, btnText, to, toText = "Перейти", isLoading, onSubmit} = props;
+
+
     return (
         <form className="form" onSubmit={onSubmit}>
 

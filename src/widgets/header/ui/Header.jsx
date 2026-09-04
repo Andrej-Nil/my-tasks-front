@@ -1,16 +1,10 @@
 import './header.scss'
 import Logo from "@/shared/ui/logo";
-import {GuestMenu, UserMenu, useUserStore} from "@/entities/user";
-import {useEffect, useState} from "react";
+import {GuestMenu, UserMenu} from "@/widgets/user-menu";
+import {useUserStore} from "@/entities/user";
 const Header = () => {
-    // const user = useUserStore((state) => state.user);
-    const user = true;
-    // const isAuthChecked = useUserStore((state) => state.isAuthChecked);
-    // const checkAuth = useUserStore((state) => state.checkAuth);
+    const user = useUserStore((state) => state.user);
 
-    // useEffect(() => {
-    //     checkAuth();
-    // }, [checkAuth]);
     return (
         <header className="header">
             <div className="header__inner container">

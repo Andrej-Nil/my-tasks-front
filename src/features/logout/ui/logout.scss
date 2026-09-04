@@ -1,0 +1,27 @@
+.logout{
+  border: none;
+  outline: none;
+  font-family: var(--main-font);
+  background: #00000000;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    background: #d7161320;
+  }
+}
+
+.logout__icon{
+  width: 24px;
+  height: 24px;
+}
+
+.logout__label{
+  font-size: 1.6rem;
+ color: var(--danger-color);
+}

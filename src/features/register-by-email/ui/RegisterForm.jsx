@@ -2,18 +2,22 @@ import Form from "@/shared/ui/form";
 import Field from "@/shared/ui/field/index.js";
 import {useState} from "react";
 import {registerByEmail} from "@/features/register-by-email";
+import {useNavigate} from "react-router-dom";
 
 const RegisterForm = () => {
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false)
+
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try{
            const response = await registerByEmail(name, email, password);
-           console.log(response)
+            if (response.authenticated) {
+                navigate('/', { replace: true });
+            }
         }catch (error){
 
         }finally {
@@ -27,6 +31,7 @@ const RegisterForm = () => {
           btnText="Зарегистрироваться"
           to="/login"
           toText="Уже есть аккаунт? Войти"
+          isLoading={isLoading}
           onSubmit={handleSubmit}
       >
          <Field
