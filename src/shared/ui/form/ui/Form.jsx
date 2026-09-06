@@ -1,13 +1,23 @@
 import './form.scss';
 import Button from "@/shared/ui/button";
 import {Link} from "react-router-dom";
+import FormLoader from "./FormLoader.jsx";
 
 const Form = (props) => {
-    const {children, title, btnText, to, toText = "Перейти", isLoading, onSubmit} = props;
+    const {
+        children,
+        title,
+        btnText,
+        to,
+        toText = "Перейти",
+        isLoading,
+        onSubmit} = props;
 
 
     return (
         <form className="form" onSubmit={onSubmit}>
+
+            {isLoading ? <FormLoader onClock={onSubmit}/> : null}
 
             <p className="form__title">{title}</p>
 

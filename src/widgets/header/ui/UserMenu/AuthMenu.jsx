@@ -1,9 +1,11 @@
-import {UserMenuDropdown} from "@/widgets/user-menu";
 import arrowDown from '@/shared/assets/icons/arrow-down.svg';
-import './user-menu.scss';
+import UserMenuDropdown from "./UserMenuDropdown.jsx";
 import {useState} from "react";
+import './user-menu.scss';
 
-const UserMenu = () => {
+
+
+const AuthMenu = () => {
     const [isOpenDropdown, setIsOpenDropdown] = useState(false);
     const handleClick = () => {
         setIsOpenDropdown(!isOpenDropdown);
@@ -22,4 +24,4 @@ const UserMenu = () => {
     )
 }
 
-export default UserMenu
+export default AuthMenu

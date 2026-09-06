@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import Logout from "@/features/logout/index.js";
+import { Logout } from "@/features/logout/index.js";
 
 const UserMenuDropdown = () => {
     return(

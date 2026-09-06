@@ -1,1 +1,1 @@
-export {default} from './ui/Logout.jsx';
+export {default as Logout} from './ui/Logout.jsx';

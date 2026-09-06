@@ -1,8 +1,11 @@
-import Form from "@/shared/ui/form";
-import Field from "@/shared/ui/field/index.js";
+import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {registerByEmail} from "@/features/register-by-email";
-import {useNavigate} from "react-router-dom";
+import Form from "@/shared/ui/form";
+import Field from "@/shared/ui/field/index.js";
+
+
+
 
 const RegisterForm = () => {
     const [name, setName] = useState('');
