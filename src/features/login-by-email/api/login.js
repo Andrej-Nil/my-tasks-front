@@ -1,7 +1,5 @@
-import api from "@/shared/api/index.js";
-import {useUserStore} from "@/entities/user/index.js";
-
-
+import api from "@/shared/api";
+import {useUserStore} from "@/entities/user";
 
 export const loginByEmail = async (email, password) => {
 

@@ -11,13 +11,14 @@ const Form = (props) => {
         to,
         toText = "Перейти",
         isLoading,
+        loaderText,
         onSubmit} = props;
 
 
     return (
         <form className="form" onSubmit={onSubmit}>
 
-            {isLoading ? <FormLoader onClock={onSubmit}/> : null}
+            {isLoading ? <FormLoader text={loaderText} onClock={onSubmit}/> : null}
 
             <p className="form__title">{title}</p>
 

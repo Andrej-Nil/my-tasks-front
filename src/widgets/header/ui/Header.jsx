@@ -1,6 +1,6 @@
 import './header.scss'
 import Logo from "@/shared/ui/logo";
-import UserMenu from './UserMenu/UserMenu'
+import UserMenu from './userMenu/UserMenu'
 const Header = () => {
 
 
@@ -10,7 +10,6 @@ const Header = () => {
                 <Logo />
                 <div className="header-nav">
                     <UserMenu />
-
                 </div>
             </div>
 

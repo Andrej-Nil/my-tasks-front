@@ -15,3 +15,8 @@
   padding: 10px 20px;
   font-size: var(--main-font-size);
 }
+
+.field__error{
+  font-size: 1.4rem;
+  color: var(--danger-color);
+}

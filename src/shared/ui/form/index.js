@@ -1,1 +1,1 @@
-export {default} from './ui/Form.jsx'
+export {default as Form} from './ui/Form.jsx'
