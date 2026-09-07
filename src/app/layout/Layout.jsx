@@ -1,9 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import Header from "@/widgets/header";
-import Footer from "@/widgets/footer";
-
-
-
+import { Header } from "@/widgets/header/index.js";
+import Footer from "@/widgets/footer/index.js";
 
 const Layout = () => {
     return(

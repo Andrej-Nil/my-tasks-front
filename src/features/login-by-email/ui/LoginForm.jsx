@@ -1,16 +1,42 @@
 import Form from "@/shared/ui/form";
 import Field from "@/shared/ui/field";
 import {useState} from "react";
+import {loginByEmail} from "@/features/login-by-email/index.js";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(!isLoading)
+        // e.preventDefault();
+        // if(isLoading){
+        //     return
+        // }
+
+        // setIsLoading(true);
+        // try{
+        //     const response = await loginByEmail(email, password);
+        //     console.log(response)
+        // }catch (error) {
+        //     console.log(error);
+        //     setIsLoading(false);
+        // } finally {
+        //     setIsLoading(false);
+        // }
+
+    }
     return (
         <Form
             title="Вход"
             btnText="Войти"
             to="/registration"
             toText="Нет аккаунта? Зарегистрироваться."
+            isLoading={isLoading}
+            onSubmit={handleSubmit}
         >
             <Field
                 type="email"
@@ -19,6 +45,7 @@ const LoginForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="vasha@pochta.ru"
+                autoComplete="email"
             />
 
             <Field
@@ -27,7 +54,8 @@ const LoginForm = () => {
                 label="Пароль"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Придумайте пароль"
+                placeholder="Пароль"
+                autoComplete="current-password"
             />
 
         </Form>

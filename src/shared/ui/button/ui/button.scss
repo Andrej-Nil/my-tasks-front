@@ -18,10 +18,10 @@
 }
 
 .btn--red{
-  background: #d71613;
+  background: var(--danger-color);
   color: #fff;
-  &:hover{
-    background: #ef3c39;
+  &:hover {
+    background: var(--light-danger-color);
   }
 }
 
