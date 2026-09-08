@@ -5,6 +5,7 @@ import FormLoader from "./FormLoader.jsx";
 
 const Form = (props) => {
     const {
+        noValidate,
         children,
         title,
         btnText,
@@ -12,15 +13,19 @@ const Form = (props) => {
         toText = "Перейти",
         isLoading,
         loaderText,
-        onSubmit} = props;
+        error,
+        onSubmit
+    } = props;
 
 
     return (
-        <form className="form" onSubmit={onSubmit}>
+        <form noValidate={noValidate} className="form" onSubmit={onSubmit}>
 
             {isLoading ? <FormLoader text={loaderText} onClock={onSubmit}/> : null}
 
             <p className="form__title">{title}</p>
+
+            {error && <p className="form__error">{error}</p>}
 
             <div className="form__body">
                 {children}

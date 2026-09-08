@@ -1,9 +1,11 @@
 import {useState} from "react";
 import {loginByEmail} from "@/features/login-by-email/index.js";
-
 import {Form} from "@/shared/ui/form";
 import {Field} from "@/shared/ui/field";
 import {validateLoginForm} from "@/features/login-by-email/model/validation";
+import {LOGIN_ERRORS} from "@/features/login-by-email/model/errors";
+import {API_ERRORS} from "@/shared/errors";
+import {useNavigate} from "react-router-dom";
 
 
 const LoginForm = () => {
@@ -11,47 +13,59 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
 
         e.preventDefault();
+
         if(isLoading){
             return;
         }
 
-        const errors = validateLoginForm(email, password);
+        const validationErrors = validateLoginForm(email, password)
+        setErrors(validationErrors);
 
-        setErrors(errors);
-
-        if(Object.keys(errors).length > 0){
+        if(Object.keys(validationErrors).length > 0){
             return;
         }
-
         setIsLoading(true);
+
         try{
-            const response = await loginByEmail(email, password);
-            console.log(response);
+            await loginByEmail(email, password);
+
+            navigate('/', { replace: true });
         }catch (error) {
-            console.log(error);
-            setIsLoading(false);
+            if(error.message === LOGIN_ERRORS.INVALID_CREDENTIALS) {
+                setErrors((prev) => ({...prev, form: "Неверный логин пароль"}));
+            }
+            if(error.message === API_ERRORS.SERVER_ERRORS) {
+                setErrors((prev) => ({...prev, form: "Проблемы с нашей стороны, попробуйте позже"}));
+            }
+            if(error.message === API_ERRORS.NETWORK_ERROR){
+                setErrors((prev) => ({...prev, form: "Нет соединения с сервером."}));
+            }
+            if(error.message === API_ERRORS.DEFAULT_ERROR){
+                setErrors((prev) => ({...prev, form: "Произошла ошибка, попробуйте позже"}));
+            }
         } finally {
             setIsLoading(false);
+            setPassword('');
         }
-
     }
-
     return (
         <Form
+            noValidate
             title="Вход"
             btnText="Войти"
             to="/registration"
             toText="Нет аккаунта? Зарегистрироваться."
             isLoading={isLoading}
             loaderText={"Загрузка профиля..."}
+            error={errors?.form}
             onSubmit={handleSubmit}
         >
             <Field
-                // type="email"
+                type="email"
                 name="email"
                 label="Ваш email"
                 value={email}

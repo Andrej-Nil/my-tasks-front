@@ -6,6 +6,7 @@ const Field = (props) => {
         name = "",
         type = "text",
         onChange,
+        value,
         placeholder="",
         autoComplete,
         error
@@ -20,6 +21,7 @@ const Field = (props) => {
                 type={type}
                 name={name}
                 id={name}
+                value={value}
                 onChange={onChange}
                 placeholder={placeholder}
                 autoComplete={autoComplete}

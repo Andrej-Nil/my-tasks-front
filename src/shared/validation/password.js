@@ -1,5 +1,4 @@
 export const validationPassword = (password) => {
-console.log(password)
     if(!password.trim()){
         return "Введите пароль";
     }
