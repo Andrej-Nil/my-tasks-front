@@ -11,8 +11,6 @@ const AuthMenu = ({user}) => {
     const handleClick = () => {
         setIsOpenDropdown(!isOpenDropdown);
     }
-
-    console.log(user)
     return (
         <div className="user-menu">
             <div onClick={handleClick} className="user-menu__top">

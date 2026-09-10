@@ -13,13 +13,13 @@ export const router = createBrowserRouter([
         element: <Layout />,
         children: [
             { path: '/', element: <HomePage /> },
-            // {
-            //     element: <PublicRoute />,
-            //     children: [
+            {
+                element: <PublicRoute />,
+                children: [
             { path: '/login', element: <LoginPage /> },
             { path: '/registration', element: <RegistrationPage /> }
-            //     ]
-            // }
+                ]
+            }
         ]
     }
 ]);
