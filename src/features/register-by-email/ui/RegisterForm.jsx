@@ -61,6 +61,7 @@ const RegisterForm = () => {
           loaderText={"Регистрируем..."}
           error={errors?.form}
           onSubmit={handleSubmit}
+          className="block"
       >
          <Field
              name="name"

@@ -1,5 +1,5 @@
 import './form.scss';
-import Button from "@/shared/ui/button";
+import {Button} from "@/shared/ui/button";
 import {Link} from "react-router-dom";
 import FormLoader from "./FormLoader.jsx";
 
@@ -14,12 +14,13 @@ const Form = (props) => {
         isLoading,
         loaderText,
         error,
-        onSubmit
+        onSubmit,
+        className
     } = props;
 
 
     return (
-        <form noValidate={noValidate} className="form" onSubmit={onSubmit}>
+        <form noValidate={noValidate} className={`form ${className}`} onSubmit={onSubmit}>
 
             {isLoading ? <FormLoader text={loaderText} onClock={onSubmit}/> : null}
 

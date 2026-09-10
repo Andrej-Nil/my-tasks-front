@@ -64,6 +64,7 @@ const LoginForm = () => {
             loaderText={"Загрузка профиля..."}
             error={errors?.form}
             onSubmit={handleSubmit}
+            className="block"
         >
             <Field
                 type="email"
