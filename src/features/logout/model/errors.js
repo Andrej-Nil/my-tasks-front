@@ -1,0 +1,3 @@
+export const LOGOUT_ERRORS = {
+    LOGOUT_ERROR: "LOGOUT_ERROR"
+}

@@ -4,7 +4,8 @@ import {registerByEmail} from "@/features/register-by-email";
 import {validationRegisterForm} from "@/features/register-by-email/model/validation";
 import {Form} from "@/shared/ui/form";
 import {Field} from "@/shared/ui/field";
-
+import {API_ERRORS} from "@/shared/errors";
+import {REGISTER_ERRORS} from "@/features/register-by-email/model/errors";
 
 const RegisterForm = () => {
     const [name, setName] = useState('');
@@ -17,10 +18,8 @@ const RegisterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-
         const validationErrors = validationRegisterForm(name, email, password);
         setErrors(validationErrors);
-
 
         if(Object.keys(validationErrors).length > 0){
             return;
@@ -29,13 +28,22 @@ const RegisterForm = () => {
         setIsLoading(true);
 
         try{
-
-
-           const response = await registerByEmail(name, email, password);
-           //  if (response.authenticated) {
-           //      navigate('/', { replace: true });
-           //  }
+            await registerByEmail(name, email, password);
+            navigate('/', { replace: true });
         }catch (error){
+
+            if(error.message === REGISTER_ERRORS.EMAIL_ALREADY_EXISTS){
+                setErrors((prev) =>({...prev, form: "Пользователь с таким email уже зарегестрирован"}))
+            }
+            if(error.message === REGISTER_ERRORS.INVALID_CREDENTIALS){
+                setErrors((prev) => ({...prev, form: "Что то пошло не так, попробуйте позже"}))
+            }
+            if(error.message === API_ERRORS.SERVER_ERRORS) {
+                setErrors((prev) => ({...prev, form: "Проблемы с нашей стороны, попробуйте позже"}));
+            }
+            if(error.message === API_ERRORS.NETWORK_ERROR){
+                setErrors((prev) => ({...prev, form: "Произошла ошибка, попробуйте позже"}))
+            }
 
         }finally {
             setIsLoading(false);

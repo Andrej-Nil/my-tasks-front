@@ -1,18 +1,19 @@
 import logoutIcon from '@/shared/assets/icons/logout.svg';
 import './logout.scss';
-import { logout } from "../model/logout.js";
+import { logout } from "../api/logout.js";
 import {useNavigate} from "react-router-dom";
+import {LOGOUT_ERRORS} from "@/features/logout/model/errors";
+import {API_ERRORS} from "@/shared/errors";
 const Logout = () => {
 
     const navigate = useNavigate();
     const handleClick = async () => {
         try {
             await logout();
-            // navigate('/', { replace: true });
         } catch (error){
-            console.log(error)
-        } finally {
 
+        } finally {
+            navigate('/', { replace: true });
         }
     }
 

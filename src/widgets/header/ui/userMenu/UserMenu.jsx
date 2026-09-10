@@ -4,7 +4,7 @@ import GuestMenu from "./GuestMenu.jsx";
 
 const UserMenu = () => {
     const user = useUserStore((state) => state.user);
-    return user ? <AuthMenu /> : <GuestMenu />
+    return user ? <AuthMenu user={user}/> : <GuestMenu />
 }
 
 export default UserMenu;

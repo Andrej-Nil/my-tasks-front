@@ -11,9 +11,12 @@ export const loginByEmail = async (email, password) => {
 
         const response = await api.get('/api/user');
 
-        useUserStore.getState().setUser(response.data);
+        if(response.data.authenticated){
+            useUserStore.getState().setUser(response.data.user)
+        } else {
+            set({ user: null, isAuthChecked: true });
+        }
 
-        return response.data;
     } catch (error) {
         if(error.response){
             const status = error.response?.status;
