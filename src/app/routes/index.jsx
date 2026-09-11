@@ -1,9 +1,12 @@
 import {createBrowserRouter} from "react-router-dom";
-import PublicRoute from "@/app/routes/guards/PublicRoute.jsx";
-import Layout from "@/app/layout/Layout.jsx";
-import HomePage from "@/pages/home/index.js";
-import LoginPage from "@/pages/login/index.js";
-import RegistrationPage from "@/pages/registration/index.js";
+import PrivateRoute from "./guards/PrivateRoute";
+import PublicRoute from "./guards/PublicRoute";
+import Layout from "../layout/Layout";
+import { HomePage } from "@/pages/home";
+import {LoginPage} from "@/pages/login";
+import {RegistrationPage} from "@/pages/registration";
+import {TasksPage} from "@/pages/tasks";
+
 
 
 
@@ -12,12 +15,20 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Layout />,
         children: [
-            { path: '/', element: <HomePage /> },
+            { index: true, element: <HomePage /> },
+
+            {
+                element:  <PrivateRoute />,
+                children: [
+                    { path: 'tasks', element: <TasksPage /> },
+                ]
+            },
+
             {
                 element: <PublicRoute />,
                 children: [
-            { path: '/login', element: <LoginPage /> },
-            { path: '/registration', element: <RegistrationPage /> }
+            { path: 'login', element: <LoginPage /> },
+            { path: 'registration', element: <RegistrationPage /> }
                 ]
             }
         ]

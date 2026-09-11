@@ -2,7 +2,6 @@ import './welcome.scss';
 import {ButtonLink} from "@/shared/ui/button";
 const Welcome = () => {
     return (
-        <div className="content">
             <div className="container small">
                 <div className="welcome block">
                     <h1 className="welcome__title">Добро пожаловать</h1>
@@ -15,13 +14,12 @@ const Welcome = () => {
                     </div>
 
                     <div className="welcome__bottom">
-                        <ButtonLink to={'/login'} className="btn--green">Вход</ButtonLink>
-                        <ButtonLink to={'/registration'} className="btn--blue">Регистрация</ButtonLink>
+                        <ButtonLink to={'login'} className="btn--green">Вход</ButtonLink>
+                        <ButtonLink to={'registration'} className="btn--blue">Регистрация</ButtonLink>
                     </div>
 
                 </div>
             </div>
-        </div>
     )
 }
 

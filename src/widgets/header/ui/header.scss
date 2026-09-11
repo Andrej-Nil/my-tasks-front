@@ -8,9 +8,24 @@ z-index: 1;
 .header__inner{
   display: flex;
   align-items: center;
+  gap: 50px;
   min-height: 70px;
 }
 
 .header-nav{
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav__item{
+  font-size: 1.8rem;
+  border-bottom: 1px solid #00000000;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    border-bottom: 1px solid var(--main-color);
+  }
+}
+
+.header-menu{
   margin-left: auto;
 }

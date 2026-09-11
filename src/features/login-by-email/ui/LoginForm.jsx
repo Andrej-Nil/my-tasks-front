@@ -58,7 +58,7 @@ const LoginForm = () => {
             noValidate
             title="Вход"
             btnText="Войти"
-            to="/registration"
+            to="registration"
             toText="Нет аккаунта? Зарегистрироваться."
             isLoading={isLoading}
             loaderText={"Загрузка профиля..."}
