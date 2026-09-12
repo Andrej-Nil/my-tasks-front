@@ -1,9 +1,9 @@
 import './button.scss';
 
 const Button = (props) => {
-    const {children, type = "button", className = ''} = props;
+    const {children, type = "button", className = '', ariaControls} = props;
     return (
-        <button type={type} className={`btn ${className}`}>{children}</button>
+        <button type={type} className={`btn ${className}`} aria-controls={ariaControls}>{children}</button>
     )
 }
 
