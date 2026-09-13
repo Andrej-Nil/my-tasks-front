@@ -10,13 +10,3 @@
   gap: 15px;
 }
 
-.task-card{
-  border: 1px solid var(--main-color);
-  padding: 10px 20px;
-
-  transition: 0.2s ease-in-out;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  &:hover{
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  }
-}

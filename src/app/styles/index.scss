@@ -5,6 +5,9 @@ $main-color: #231F20;
 $danger-color: #d71613;
 $light-danger-color: #ef3c39;
 
+$success-color: #008541;
+$light-success-color: #019d4f;
+
 :root {
   --main-font: #{$main-font};
   --title-font: #{$title-font};
@@ -14,6 +17,8 @@ $light-danger-color: #ef3c39;
   --danger-color: #{$danger-color};
   --light-danger-color: #{$light-danger-color};
 
+  --success-color: #{$success-color};
+  --light-success-color: #{$light-success-color};
 }
 *{
   margin: 0;

@@ -3,14 +3,14 @@ import './field.scss';
 const Field = (props) => {
     const {
         label,
-        ariaLabel,
+        isHideLabel,
         name,
         type = "text",
         onChange,
         value,
-        placeholder,
-        autoComplete,
-        error
+        error,
+        ...inputProps
+
     } = props;
 
     return (
@@ -19,14 +19,12 @@ const Field = (props) => {
             {error && <p className="field__error">{error}</p>}
             <input
                 className="field__input"
-                aria-label={ariaLabel}
                 type={type}
                 name={name}
                 id={name}
                 value={value}
                 onChange={onChange}
-                placeholder={placeholder}
-                autoComplete={autoComplete}
+                {...inputProps}
             />
         </div>
     )

@@ -9,9 +9,9 @@ const CreateTask = () => {
             <Field
                 name={name}
                 placeholder="Быстрая заметка"
-                ariaLabel="Название заметки"
+                aria-label="Название заметки"
             />
-            <Button ariaControls={name} className="btn--green">Создать</Button>
+            <Button className="btn--green">Создать</Button>
         </div>
     )
 }

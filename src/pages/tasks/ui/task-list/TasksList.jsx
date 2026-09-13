@@ -1,30 +1,19 @@
 import {Field} from "@/shared/ui/field";
 import './taskList.scss'
+import {TaskCard} from "@/entities/task";
+
 const TasksList = () => {
     return (
         <div className="tasks-block">
             <Field
                 name="filterTasks"
                 placeholder="Поиск по задачам"
-                ariaLabel="Поиск по задачам"
+                aria-label="Поиск по задачам"
             />
             <div className="task-list">
-                <div className="task-card">
-                    <p className="task-card__title">sdfdsik sdefsdiogf</p>
-                    <div className="task-card__info"></div>
-                    <div className="task-card__controls"></div>
-                </div>
 
-                <div className="task-card">
-                    <p className="task-card__title">sdfdsik sdefsdiogf</p>
-                    <div className="task-card__info"></div>
-                    <div className="task-card__controls"></div>
-                </div>
-                <div className="task-card">
-                    <p className="task-card__title">sdfdsik sdefsdiogf</p>
-                    <div className="task-card__info"></div>
-                    <div className="task-card__controls"></div>
-                </div>
+                <TaskCard title={'Задача номер1'} id={'1'} />
+
 
             </div>
 
