@@ -1,18 +1,27 @@
 $main-font: Arial, Helvetica, sans-serif;
 $title-font: 'Trebuchet MS', sans-serif;
 $main-font-size: 1.6rem;
+
 $main-color: #231F20;
+$light-main-color: #231F20a0;
+
 $danger-color: #d71613;
 $light-danger-color: #ef3c39;
 
 $success-color: #008541;
 $light-success-color: #019d4f;
 
+$light-bd: #ccc;
+
 :root {
   --main-font: #{$main-font};
   --title-font: #{$title-font};
   --main-font-size: #{$main-font-size};
+
   --main-color: #{$main-color};
+  --light-main-color: #{$light-main-color};
+
+  --light-bd: #{$light-bd};
 
   --danger-color: #{$danger-color};
   --light-danger-color: #{$light-danger-color};

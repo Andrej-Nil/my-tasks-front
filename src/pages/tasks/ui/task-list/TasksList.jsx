@@ -1,6 +1,7 @@
 import {Field} from "@/shared/ui/field";
-import './taskList.scss'
 import {TaskCard} from "@/entities/task";
+import Pagination from "../pagination/Pagination";
+import './taskList.scss'
 
 const TasksList = () => {
     return (
@@ -11,15 +12,11 @@ const TasksList = () => {
                 aria-label="Поиск по задачам"
             />
             <div className="task-list">
-
                 <TaskCard title={'Задача номер1'} id={'1'} />
-
-
             </div>
 
-            <div className="pagination">
+            <Pagination />
 
-            </div>
         </div>
     )
 }

@@ -7,20 +7,18 @@ export const useUserStore = create((set) => ({
     clearUser: () => set({ user: null }),
     isAuthChecked: false,
     checkAuth: async () => {
-
         try {
             const response = await api.get('/api/user');
 
             if(response.data.authenticated){
-                set({ user: response.data.user, isAuthChecked: true });
+                set({ user: response.data.user});
             }else{
-                set({ user: null, isAuthChecked: true });
+                set({ user: null });
             }
-
-
         } catch (error) {
-
-            set({ user: null, isAuthChecked: true });
+            set({ user: null});
+        } finally {
+            set({isAuthChecked: true})
         }
-    },
+    }
 }));

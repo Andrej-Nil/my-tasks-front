@@ -4,18 +4,18 @@ import {API_ERRORS} from "@/shared/errors";
 import {LOGOUT_ERRORS} from "@/features/logout/model/errors";
 
 export const logout = async () => {
+    const { clearUser } = useUserStore.getState();
     try{
         await api.post('/logout');
-
+        clearUser();
     } catch (error) {
         if(error.response){
             const status = error.response?.status;
             if(status >= 500){
                 throw new Error(API_ERRORS.SERVER_ERRORS);
             }
-            useUserStore.getState().setUser(null);
+            clearUser();
             throw new Error(LOGOUT_ERRORS.LOGOUT_ERROR);
-
         }
 
         if(error.request){
@@ -23,7 +23,5 @@ export const logout = async () => {
         }
 
         throw new Error(API_ERRORS.DEFAULT_ERROR);
-    } finally {
-        useUserStore.getState().setUser(null);
     }
 }
