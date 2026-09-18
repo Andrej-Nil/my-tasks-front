@@ -1,11 +1,11 @@
-import {useUserStore} from "@/entities/user";
+import {useUser, useUserStore} from "@/entities/user";
 
 import './header.scss';
 import {Link} from "react-router-dom";
 
 const HeaderNav = () => {
 
-    const user = useUserStore((state) => state.user);
+    const {data: user} = useUser();
 
     if(!user) return null;
 

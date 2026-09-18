@@ -22,7 +22,7 @@ const Form = (props) => {
     return (
         <form noValidate={noValidate} className={`form ${className}`} onSubmit={onSubmit}>
 
-            {isLoading ? <FormLoader text={loaderText} onClock={onSubmit}/> : null}
+            {isLoading ? <FormLoader text={loaderText} /> : null}
 
             <p className="form__title">{title}</p>
 

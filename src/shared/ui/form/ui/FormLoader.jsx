@@ -1,8 +1,8 @@
 import {Spinner} from "@/shared/ui/spinner";
 
-const FormLoader = ({text, onClock}) => {
+const FormLoader = ({text}) => {
     return(
-        <div onClick={onClock} className="form-loader">
+        <div className="form-loader">
             <div className="form-loader__inner">
                 <Spinner />
                 <p className="form-loader__text" >{text}</p>

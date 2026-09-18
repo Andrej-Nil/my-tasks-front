@@ -1,10 +1,8 @@
-import {useUserStore} from "@/entities/user/index.js";
+import {useUser} from "@/entities/user/index.js";
 import {Navigate, Outlet} from "react-router-dom";
 
 const PrivateRoute = () => {
-
-    const user = useUserStore((state) => state.user);
-
+    const {data: user} = useUser();
     if(!user){
         return <Navigate to="/" replace />
     }
