@@ -1,4 +1,4 @@
-import {useUser, useUserStore} from "@/entities/user";
+import {useUser} from "@/entities/user";
 
 import './header.scss';
 import {Link} from "react-router-dom";

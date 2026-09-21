@@ -4,7 +4,6 @@ import GuestMenu from "./GuestMenu.jsx";
 
 const UserMenu = () => {
     const {data: user} = useUser();
-    console.log(user)
     return user ? <AuthMenu user={user}/> : <GuestMenu />
 }
 

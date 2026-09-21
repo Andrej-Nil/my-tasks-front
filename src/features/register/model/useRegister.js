@@ -5,8 +5,7 @@ import {REGISTER_ERRORS} from "./errors";
 
 const getRegisterError = (error) => {
     if (error.response) {
-        const {status, data} = error.response.status;
-
+        const {status, data} = error.response;
         if (status === 422) {
             if(data.errors?.email?.includes('validation.unique')){
                 throw new Error(REGISTER_ERRORS.EMAIL_ALREADY_EXISTS);
@@ -37,7 +36,7 @@ export const useRegister = () => {
             try {
                 return await register(name, email, password);
             } catch (error) {
-                throw new Error(getRegisterError(error))
+                throw new Error(getRegisterError(error));
             }
 
         },

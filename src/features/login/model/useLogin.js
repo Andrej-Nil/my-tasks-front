@@ -1,7 +1,6 @@
-import {useMutation, useQueryClient} from "@tanstack/react-query";
-import {login, useUserStore} from "@/entities/user";
-
 import {useNavigate} from "react-router-dom";
+import {useMutation, useQueryClient} from "@tanstack/react-query";
+import {login} from "@/entities/user";
 import {LOGIN_ERRORS} from "@/features/login/model/errors";
 
 const getLoginError = (error) => {
@@ -42,7 +41,6 @@ export const useLogin = () => {
 
         onSuccess: (data) => {
             queryClient.setQueryData(['user'], data.user);
-            // useUserStore.getState().setUser(data.user);
             navigate('/', { replace: true });
         }
     });

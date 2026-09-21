@@ -2,7 +2,6 @@ import arrowDown from '@/shared/assets/icons/arrow-down.svg';
 import UserMenuDropdown from "./UserMenuDropdown.jsx";
 import {useState} from "react";
 import './user-menu.scss';
-import {useUserStore} from "@/entities/user";
 
 
 

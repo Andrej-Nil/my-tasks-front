@@ -15,6 +15,8 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        setErrors({});
+
         const validationErrors = validateLoginForm(email, password);
 
         setErrors(validationErrors);
@@ -22,7 +24,18 @@ const LoginForm = () => {
         if(Object.keys(validationErrors).length > 0){
             return;
         }
-        loginMutation.mutate({email, password})
+
+        loginMutation.mutate(
+            {email, password},
+            {
+                onError: (error) => {
+                    setErrors((prev) => ({
+                        ...prev,
+                        form: error.message
+                    }))
+                }
+            }
+        )
 
     }
 
