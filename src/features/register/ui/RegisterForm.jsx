@@ -1,20 +1,15 @@
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
-import {registerByEmail} from "@/features/register-by-email";
-import {validationRegisterForm} from "@/features/register-by-email/model/validation";
+import {registerByEmail} from "@/features/register";
+import {validationRegisterForm} from "@/features/register/model/validation";
 import {Form} from "@/shared/ui/form";
 import {Field} from "@/shared/ui/field";
-import {API_ERRORS} from "@/shared/errors";
-import {REGISTER_ERRORS} from "@/features/register-by-email/model/errors";
 
 const RegisterForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({})
-    const [isLoading, setIsLoading] = useState(false)
-
-    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -25,29 +20,29 @@ const RegisterForm = () => {
             return;
         }
 
-        setIsLoading(true);
-
-        try{
-            await registerByEmail(name, email, password);
-            navigate('/', { replace: true });
-        }catch (error){
-
-            if(error.message === REGISTER_ERRORS.EMAIL_ALREADY_EXISTS){
-                setErrors((prev) =>({...prev, form: "Пользователь с таким email уже зарегестрирован"}))
-            }
-            if(error.message === REGISTER_ERRORS.INVALID_CREDENTIALS){
-                setErrors((prev) => ({...prev, form: "Что то пошло не так, попробуйте позже"}))
-            }
-            if(error.message === API_ERRORS.SERVER_ERRORS) {
-                setErrors((prev) => ({...prev, form: "Проблемы с нашей стороны, попробуйте позже"}));
-            }
-            if(error.message === API_ERRORS.NETWORK_ERROR){
-                setErrors((prev) => ({...prev, form: "Произошла ошибка, попробуйте позже"}))
-            }
-
-        }finally {
-            setIsLoading(false);
-        }
+        // setIsLoading(true);
+        //
+        // try{
+        //     await registerByEmail(name, email, password);
+        //     navigate('/', { replace: true });
+        // }catch (error){
+        //
+        //     if(error.message === REGISTER_ERRORS.EMAIL_ALREADY_EXISTS){
+        //         setErrors((prev) =>({...prev, form: "Пользователь с таким email уже зарегестрирован"}))
+        //     }
+        //     if(error.message === REGISTER_ERRORS.INVALID_CREDENTIALS){
+        //         setErrors((prev) => ({...prev, form: "Что то пошло не так, попробуйте позже"}))
+        //     }
+        //     if(error.message === API_ERRORS.SERVER_ERRORS) {
+        //         setErrors((prev) => ({...prev, form: "Проблемы с нашей стороны, попробуйте позже"}));
+        //     }
+        //     if(error.message === API_ERRORS.NETWORK_ERROR){
+        //         setErrors((prev) => ({...prev, form: "Произошла ошибка, попробуйте позже"}))
+        //     }
+        //
+        // }finally {
+        //     setIsLoading(false);
+        // }
     }
 
     return(

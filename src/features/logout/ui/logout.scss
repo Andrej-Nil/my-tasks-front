@@ -1,4 +1,5 @@
-.logout{
+
+.logout__btn{
   border: none;
   outline: none;
   font-family: var(--main-font);
@@ -23,5 +24,12 @@
 
 .logout__label{
   font-size: 1.6rem;
- color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+
+.logout__error{
+  margin-top: 20px;
+  color: var(--danger-color);
+  font-size: 1.4rem;
 }

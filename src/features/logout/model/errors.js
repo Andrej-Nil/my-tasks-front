@@ -1,3 +1,5 @@
 export const LOGOUT_ERRORS = {
-    LOGOUT_ERROR: "LOGOUT_ERROR"
+    SERVER_ERRORS: "Произошла ошибка! Выход неудался, попробуйте позже",
+    NETWORK_ERROR: "Сервер не доступен! Выход неудолся, попробуйте позже",
+    DEFAULT_ERROR: "Ошибка! Выход неудолся, попробуйте позже",
 }

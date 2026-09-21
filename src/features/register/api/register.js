@@ -1,6 +1,6 @@
 import api from "@/shared/api";
 import {useUserStore} from "@/entities/user";
-import {REGISTER_ERRORS} from "@/features/register-by-email/model/errors";
+import {REGISTER_ERRORS} from "@/features/register/model/errors";
 import {API_ERRORS} from "@/shared/errors";
 
 export const registerByEmail = async (name, email, password) => {

@@ -1,4 +1,4 @@
-import {RegisterForm} from "@/features/register-by-email/index.js";
+import {RegisterForm} from "@/features/register/index.js";
 
 const RegistrationPage = () => {
     return (
