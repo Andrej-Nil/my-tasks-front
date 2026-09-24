@@ -6,8 +6,6 @@ const Field = (props) => {
         isHideLabel,
         name,
         type = "text",
-        onChange,
-        value,
         error,
         ...inputProps
 
@@ -22,8 +20,6 @@ const Field = (props) => {
                 type={type}
                 name={name}
                 id={name}
-                value={value}
-                onChange={onChange}
                 {...inputProps}
             />
         </div>

@@ -5,9 +5,13 @@
   border: none;
   font-family: var(--main-font);
   font-size: 1.6rem;
-  padding: 10px 20px;
+  padding: 11px 20px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  &[disabled]{
+    cursor: default;
+    opacity: 0.5;
+  }
 }
 
 .btn--base{
@@ -20,6 +24,11 @@
   color: #fff;
   &:hover{
     background: #1475ff;
+  }
+  &[disabled]{
+    &:hover{
+      background: #005dff;
+    }
   }
 }
 
@@ -37,6 +46,11 @@
   color: #fff;
   &:hover{
     background: #019d4f;
+  }
+  &[disabled]{
+    &:hover{
+      background: #008541;
+    }
   }
 }
 

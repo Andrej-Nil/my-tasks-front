@@ -10,3 +10,10 @@
   gap: 15px;
 }
 
+.task-list__message{
+  text-align: center;
+  &.error{
+    color: var(--danger-color);
+  }
+}
+

@@ -1,5 +1,5 @@
 
-import {CreateTask} from "@/features/create-task";
+import {CreateTask} from "@/features/create-short-task";
 import TasksList from "../task-list/TasksList";
 import './tasksWrapper.scss';
 const TasksWrapper = () => {

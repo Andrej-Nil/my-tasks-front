@@ -1,7 +1,5 @@
-import './checkbox.scss';
-
 import {MdCheck} from "react-icons/md";
-
+import './checkbox.scss';
 const Checkbox = ({className, ...props}) => {
     return (
         <label className={`checkbox ${className}`}>

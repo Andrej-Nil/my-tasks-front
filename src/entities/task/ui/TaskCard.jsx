@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import {Checkbox} from "@/shared/ui/checkbox";
 import {Button} from "@/shared/ui/button";
-import { MdDelete, MdCheck } from 'react-icons/md';
+import { MdDelete} from 'react-icons/md';
 import './taskCard.scss';
 
 

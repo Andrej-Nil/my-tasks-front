@@ -1,5 +1,5 @@
 export const validationPassword = (password) => {
-    if(!password.trim()){
+    if(!password || !password.trim()){
         return "Введите пароль";
     }
 

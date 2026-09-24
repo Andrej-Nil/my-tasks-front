@@ -1,5 +1,5 @@
 export const validationEmail = (email) => {
-    if(!email.trim()){
+    if(!email ||!email.trim()){
         return "Введите электронную почту";
     }
 
