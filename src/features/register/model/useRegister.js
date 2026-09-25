@@ -36,7 +36,8 @@ export const useRegister = () => {
             try {
                 return await register(name, email, password);
             } catch (error) {
-                throw new Error(getRegisterError(error));
+                error.userMessage = getRegisterError(error);
+                throw error;
             }
 
         },

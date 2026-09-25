@@ -34,7 +34,8 @@ export const useLogout = () => {
             try{
                 return await logout();
             } catch (error) {
-                throw new Error(getLogoutError(error));
+                error.userMessage = getLogoutError(error);
+                throw error;
             }
         },
         networkMode: 'always',

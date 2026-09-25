@@ -2,7 +2,8 @@ import api from "@/shared/api";
 
 export const createShortTask = async (title) => {
     const response = await api.post('/api/tasks', {
-        title
+        title,
+        description: null
     });
 
     return response.data;

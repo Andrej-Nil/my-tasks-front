@@ -5,7 +5,8 @@ import { MdDelete} from 'react-icons/md';
 import './taskCard.scss';
 
 
-const TaskCard = ({id, title}) => {
+const TaskCard = (props) => {
+    const {id, title, description, isCompledet} = props
     return (
         <div className="task-card">
 

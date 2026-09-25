@@ -28,7 +28,7 @@ const RegisterForm = () => {
                     onError: (error) =>{
                         setErrors((prev) => ({
                             ...prev,
-                            form: error.message,
+                            form: error.userMessage,
                         }));
                     }
                 }

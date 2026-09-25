@@ -19,7 +19,7 @@ const CreateShortTask = () => {
         setError('')
         const validationErrors = validationShortTask(title);
         setError(validationErrors);
-        if(error) return;
+        if(validationErrors) return;
 
 
         createMutation.mutate(
@@ -29,7 +29,7 @@ const CreateShortTask = () => {
                     setTitle('');
                 },
                 onError: (error) => {
-                    setError(error);
+                    setError(error?.userMessage);
                 }
             })
 

@@ -1,12 +1,17 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import { createShortTask } from "@/entities/task/api/createShortTask";
 import {SHORT_TASK_ERRORS} from "./errors";
+import {useNavigate} from "react-router-dom";
 
 
 
 const getShortTaskError = (error) => {
     if (error.response) {
-        const {status, data} = error.response;
+        const {status} = error.response;
+        if (status === 401) {
+            return SHORT_TASK_ERRORS.USER_NOT_AUTHORIZER;
+        }
+
         if (status === 422) {
             return SHORT_TASK_ERRORS.INVALID_CREDENTIALS;
         }
@@ -26,6 +31,7 @@ const getShortTaskError = (error) => {
 };
 
 export const useCreateShortTask = () => {
+    const navigate = useNavigate();
     const queryClient = useQueryClient();
 
     return useMutation( {
@@ -34,12 +40,21 @@ export const useCreateShortTask = () => {
             try{
                 return await createShortTask(title);
             } catch (error) {
-                throw new Error(getShortTaskError(error));
+                error.userMessage = getShortTaskError(error);
+                throw error;
             }
         },
         networkMode: 'always',
         onSuccess: (data) => {
             console.log(data);
+            queryClient.setQueryData(['tasks'], (oldTasks = []) => {
+                return [data.task, ...oldTasks];
+            });
+        },
+        onError: (error) => {
+            if(error.response?.status === 500){
+                queryClient.setQueryData(['user'], null);
+            }
         }
     })
 }

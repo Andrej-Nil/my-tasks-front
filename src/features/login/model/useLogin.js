@@ -34,7 +34,8 @@ export const useLogin = () => {
             try{
                  return await login(email, password);
             }catch (error){
-                throw new Error(getLoginError(error));
+                error.userMessage = getLoginError(error);
+                throw error;
             }
         },
         networkMode: 'always',

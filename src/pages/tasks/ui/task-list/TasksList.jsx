@@ -15,7 +15,13 @@ const TasksList = () => {
 
        if(tasks){
            return tasks.map((item) => {
-               return <TaskCard key={item.id} title={item.title} id={item.id} />
+               return <TaskCard
+                   key={item.id}
+                   title={item.title}
+                   id={item.id}
+                   description={item.description}
+                   isCompleted={item.is_completed}
+               />
            })
        }
     }
