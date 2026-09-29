@@ -31,8 +31,9 @@ const LoginForm = () => {
                 onError: (error) => {
                     setErrors((prev) => ({
                         ...prev,
-                        form: error.message
-                    }))
+                        form: error.userMessage
+                    }));
+                    setPassword('');
                 }
             }
         )
@@ -48,7 +49,7 @@ const LoginForm = () => {
             toText="Нет аккаунта? Зарегистрироваться."
             isLoading={loginMutation.isPending}
             loaderText={"Загрузка профиля..."}
-            error={loginMutation.error?.message || errors?.form}
+            error={errors?.form}
             onSubmit={handleSubmit}
             className="block"
         >

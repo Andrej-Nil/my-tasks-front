@@ -26,7 +26,6 @@ const getLogoutError = (error) => {
 };
 
 export const useLogout = () => {
-    const navigate = useNavigate();
     const queryClient = useQueryClient();
 
     return useMutation({
@@ -41,7 +40,6 @@ export const useLogout = () => {
         networkMode: 'always',
         onSuccess: () => {
             queryClient.setQueryData(['user'], null);
-            navigate('/', { replace: true });
         }
     })
 }

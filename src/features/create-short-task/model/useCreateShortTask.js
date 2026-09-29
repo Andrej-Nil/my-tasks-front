@@ -31,7 +31,6 @@ const getShortTaskError = (error) => {
 };
 
 export const useCreateShortTask = () => {
-    const navigate = useNavigate();
     const queryClient = useQueryClient();
 
     return useMutation( {
