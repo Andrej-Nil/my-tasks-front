@@ -1,7 +1,6 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import { createShortTask } from "@/entities/task/api/createShortTask";
+import { createShortTask } from "@/entities/task/api";
 import {SHORT_TASK_ERRORS} from "./errors";
-import {useNavigate} from "react-router-dom";
 
 
 
@@ -45,7 +44,6 @@ export const useCreateShortTask = () => {
         },
         networkMode: 'always',
         onSuccess: (data) => {
-            console.log(data);
             queryClient.setQueryData(['tasks'], (oldTasks = []) => {
                 return [data.task, ...oldTasks];
             });

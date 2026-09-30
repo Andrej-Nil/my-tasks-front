@@ -20,9 +20,8 @@ const Logout = () => {
             </button>
 
             {
-                logoutMutation.error?.userMessage
-                ? <p className="logout__error">
-                    {logoutMutation.error?.userMessage}</p> : ''
+                logoutMutation.error?.userMessage &&
+                <p className="logout__error"> {logoutMutation.error?.userMessage}</p>
             }
         </div>
 
