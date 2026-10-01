@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from "@/widgets/header/index.js";
-import Footer from "@/widgets/footer/index.js";
-import {useUser} from "@/entities/user";
+import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
+import { useUser } from "@/entities/user";
+import { CreateTask } from "@/features/create-task";
 
 const Layout = () => {
 
@@ -17,6 +18,7 @@ const Layout = () => {
                 <Outlet />
             </div>
             <Footer />
+            <CreateTask />
         </div>
     )
 }

@@ -1,8 +1,6 @@
 import {useUser} from "@/entities/user";
-
-import './header.scss';
 import {Link} from "react-router-dom";
-
+import './header.scss';
 const HeaderNav = () => {
 
     const {data: user} = useUser();
@@ -10,12 +8,12 @@ const HeaderNav = () => {
     if(!user) return null;
 
     return (
-        <div className="header-nav">
+        <nav className="header-nav" aria-label="Основная навигация">
             <Link to="tasks" className="header-nav__item">Задачи</Link>
             <Link to="tasks" className="header-nav__item">Задачи</Link>
             <Link to="tasks" className="header-nav__item">Задачи</Link>
             <Link to="tasks" className="header-nav__item">Задачи</Link>
-        </div>
+        </nav>
     )
 }
 

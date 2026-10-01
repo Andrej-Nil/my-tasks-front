@@ -5,7 +5,6 @@ const Button = (props) => {
         children,
         type = "button",
         className = '',
-        ariaControls,
         ...btnProps
     } = props;
     return (

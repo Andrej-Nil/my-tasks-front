@@ -1,1 +1,1 @@
-export {default as CreateTask } from './ui/CreateShortTask';
+export {default as CreateShortTask } from './ui/CreateShortTask';

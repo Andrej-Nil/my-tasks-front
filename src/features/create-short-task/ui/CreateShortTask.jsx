@@ -3,7 +3,7 @@ import {useCreateShortTask} from "../model/useCreateShortTask";
 import {Field} from "@/shared/ui/field";
 import {Button} from "@/shared/ui/button";
 import {validationShortTask} from "../model/validation";
-import './createTask.scss'
+import './createShortTask.scss'
 
 const CreateShortTask = () => {
     const [title, setTitle] = useState('');
@@ -36,10 +36,10 @@ const CreateShortTask = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="create-task">
+        <form onSubmit={handleSubmit} className="create-short-task">
             <Field
                 value={title}
-                name="title"
+                name="titleShortTask"
                 error={error}
                 placeholder="Быстрая заметка"
                 aria-label="Название заметки"
