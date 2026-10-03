@@ -16,7 +16,7 @@ const TextareaField = (props) => {
             <label className="field__label" htmlFor={name}>{label}</label>
             {error && <p className="field__error">{error}</p>}
             <textarea
-                className="field__input"
+                className="field__input field__input--textarea"
                 name={name}
                 id={name}
                 onChange={onChange}

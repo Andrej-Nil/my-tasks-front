@@ -54,7 +54,7 @@ const TaskCard = (props) => {
             <div className="task-card__controls">
                 <Button
                     onClick={handleDelete}
-                    className='btn btn--base task-card__btn'
+                    className='btn--base task-card__btn'
                     aria-label={`Удалить задачу ${title}`}
                     disabled={isPending}
                 >

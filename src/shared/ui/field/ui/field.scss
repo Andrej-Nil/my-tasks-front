@@ -3,12 +3,12 @@
   width: 100%;
   flex-direction: column;
   gap: 5px;
+  font-family: var(--main-font);
+
 
 }
 
-.textarea{
 
-}
 
 .field__label{
   font-size: 1.6rem;
@@ -18,7 +18,12 @@
   border: 1px solid var(--light-bd);
   outline: none;
   padding: 10px 20px;
+  font-family: var(--main-font);
   font-size: var(--main-font-size);
+
+  &.field__input--textarea{
+    resize: vertical;
+  }
 }
 
 .field__error{

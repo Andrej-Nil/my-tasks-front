@@ -1,0 +1,41 @@
+.modal{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+}
+
+.modal__bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.modal__inner{
+  position: relative;
+}
+
+.modal-close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 25px;
+  height: 30px;
+  width: 30px;
+}
+
+
+.modal-close__icon{
+  width: 24px;
+  height: 24px;
+  color: var(--main-color);
+}
