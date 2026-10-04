@@ -1,16 +1,38 @@
 import {Form} from "@/shared/ui/form";
 import {Field, TextareaField} from "@/shared/ui/field";
 import {useState} from "react";
+import {useCreateTask} from "../model/useCreateTask";
+import {validationCreateTask} from "../model/validation";
 
 const CreateTaskForm = () => {
-
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [errors, setErrors] = useState({});
 
+    const createMutation = useCreateTask();
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        setErrors({});
+        e.preventDefault();
 
+        const validationErrors = validationCreateTask(title);
+        setErrors(validationErrors);
+        console.log(validationErrors)
+        if(Object.keys(validationErrors).length > 0){
+            return;
+        }
+
+        createMutation.mutate(
+            {title, description},
+            {
+                onError: (error) => {
+                    setErrors((prev) => ({
+                        ...prev,
+                        form: error?.userMessage
+                    }));
+                }
+            }
+        )
     }
     return (
         <Form
@@ -19,7 +41,7 @@ const CreateTaskForm = () => {
             btnText="Создать"
             isLoading={null}
             loaderText={"Идет создание..."}
-            error={null}
+            error={errors?.form}
             onSubmit={handleSubmit}
         >
 
@@ -30,7 +52,7 @@ const CreateTaskForm = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Название задачи"
                 autoComplete="title"
-                error={errors?.email}
+                error={errors?.title}
             />
 
             <TextareaField

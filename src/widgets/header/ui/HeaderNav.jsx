@@ -10,9 +10,6 @@ const HeaderNav = () => {
     return (
         <nav className="header-nav" aria-label="Основная навигация">
             <Link to="tasks" className="header-nav__item">Задачи</Link>
-            <Link to="tasks" className="header-nav__item">Задачи</Link>
-            <Link to="tasks" className="header-nav__item">Задачи</Link>
-            <Link to="tasks" className="header-nav__item">Задачи</Link>
         </nav>
     )
 }

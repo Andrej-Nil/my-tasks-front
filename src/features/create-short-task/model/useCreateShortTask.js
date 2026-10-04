@@ -1,5 +1,5 @@
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import { createShortTask } from "@/entities/task/api";
+import { createShortTask } from "@/entities/task";
 import {SHORT_TASK_ERRORS} from "./errors";
 
 
@@ -9,6 +9,10 @@ const getShortTaskError = (error) => {
         const {status} = error.response;
         if (status === 401) {
             return SHORT_TASK_ERRORS.USER_NOT_AUTHORIZER;
+        }
+
+        if (status === 403) {
+            return SHORT_TASK_ERRORS.FORBIDDEN;
         }
 
         if (status === 422) {
@@ -48,10 +52,5 @@ export const useCreateShortTask = () => {
                 return [data.task, ...oldTasks];
             });
         },
-        onError: (error) => {
-            if(error.response?.status === 500){
-                queryClient.setQueryData(['user'], null);
-            }
-        }
     })
 }

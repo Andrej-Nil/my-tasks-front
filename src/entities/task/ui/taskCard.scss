@@ -96,13 +96,24 @@
 }
 
 .task-card__body{
+  display: flex;
+  align-items: center;
+  gap: 10px;
   flex-grow: 1;
+
 }
 
 .task-card__title{
   display: block;
   padding: 10px 0;
 
+}
+
+.task-card__icon{
+  width: 20px;
+  height: 20px;
+  color: var(--main-color);
+  flex-shrink: 0;
 }
 
 .task-card__btn{

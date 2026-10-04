@@ -2,7 +2,7 @@
   position: relative;
   background: #ffffff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-z-index: 1;
+  z-index: 1;
 }
 
 .header__inner{
@@ -28,4 +28,8 @@ z-index: 1;
 
 .header-menu{
   margin-left: auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
+

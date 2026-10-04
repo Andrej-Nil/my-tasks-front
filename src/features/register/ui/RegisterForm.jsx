@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useRegister} from "../model/useRegister";
-import {validationRegisterForm} from "@/features/register/model/validation";
+import {validationRegisterForm} from "../model/validation";
 import {Form} from "@/shared/ui/form";
 import {Field} from "@/shared/ui/field";
 
@@ -24,16 +24,16 @@ const RegisterForm = () => {
 
         registerMutation.mutate(
             {name, email, password},
-                {
-                    onError: (error) =>{
-                        setErrors((prev) => ({
-                            ...prev,
-                            form: error.userMessage,
-                        }));
-                    }
+            {
+                onError: (error) =>{
+                    setErrors((prev) => ({
+                        ...prev,
+                        form: error.userMessage,
+                    }));
                 }
-            )
-        }
+            }
+        )
+    }
 
     return(
       <Form
