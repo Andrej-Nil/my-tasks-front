@@ -19,20 +19,20 @@
   background: #00000000;
 }
 
-.btn--blue{
-  background: #005dff;
+.btn--primary{
+  background: var(--primary-color);
   color: #fff;
   &:hover{
-    background: #1475ff;
+    background: var(--light-primary-color);
   }
   &[disabled]{
     &:hover{
-      background: #005dff;
+      background: var(--primary-color);
     }
   }
 }
 
-.btn--red{
+.btn--danger{
   background: var(--danger-color);
   color: #fff;
   &:hover {
@@ -41,23 +41,44 @@
 }
 
 
-.btn--green{
-  background: #008541;
+.btn--success{
+  background: var(--success-color);
   color: #fff;
   &:hover{
-    background: #019d4f;
+    background: var(--light-success-color);
   }
   &[disabled]{
     &:hover{
-      background: #008541;
+      background: var(--success-color);
     }
   }
 }
 
-.btn--orange{
-  background: #FFBE00;
+.btn--outline-success{
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  padding: 10px 20px;
+  &:hover{
+   background: var(--success-color);
+   color: #fff;
+  }
+  &[disabled]{
+    &:hover{
+      background: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+.btn--warning{
+  background: var(--warning-color);
   color: var(--main-color);
   &:hover{
-    background: #ffd179;
+    background: var(--light-warning-color);
+  }
+  &[disabled]{
+    &:hover{
+      background: var(--warning-color);
+    }
   }
 }

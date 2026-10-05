@@ -45,7 +45,7 @@ const CreateShortTask = () => {
                 aria-label="Название заметки"
                 onChange={handleChange}
             />
-            <Button disabled={createMutation.isPending} type="submit" className="btn--green">Создать</Button>
+            <Button disabled={createMutation.isPending} type="submit" className="btn--success">Создать</Button>
         </form>
     )
 }

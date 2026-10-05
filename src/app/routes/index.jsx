@@ -6,6 +6,7 @@ import { HomePage } from "@/pages/home";
 import {LoginPage} from "@/pages/login";
 import {RegistrationPage} from "@/pages/registration";
 import {TasksPage} from "@/pages/tasks";
+import {TaskPage} from "@/pages/task";
 
 
 
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
                 element:  <PrivateRoute />,
                 children: [
                     { path: 'tasks', element: <TasksPage /> },
+                    { path: 'tasks/:taskId', element: <TaskPage /> },
                 ]
             },
 

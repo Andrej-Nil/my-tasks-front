@@ -2,14 +2,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--success-color);
-  background: rgba(0, 0, 0, 0);
-  color: var(--success-color);
-
-  &:hover{
-    color: #fff;
-    background: var(--success-color);
-  }
+  //border: 1px solid var(--success-color);
+  //background: rgba(0, 0, 0, 0);
+  //color: var(--success-color);
+  //
+  //&:hover{
+  //  color: #fff;
+  //  background: var(--success-color);
+  //}
 }
 
 .open-create-task__name{

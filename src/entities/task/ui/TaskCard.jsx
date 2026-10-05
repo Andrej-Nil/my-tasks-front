@@ -46,7 +46,7 @@ const TaskCard = (props) => {
             />
 
 
-                <Link to={`task/${id}`} className="task-card__body">
+                <Link to={`/tasks/${id}`} className="task-card__body">
                     <span className="task-card__title">{title}</span>
                     {
                         description &&

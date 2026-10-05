@@ -35,7 +35,7 @@ const Form = (props) => {
             <div className="form__bottom">
                 <Button
                     type="submit"
-                    className="btn--blue"
+                    className="btn--primary"
                 >
                     {btnText}
                 </Button>

@@ -40,7 +40,7 @@ const RegisterForm = () => {
           noValidate
           title="Регистрация"
           btnText="Зарегистрироваться"
-          to="login"
+          to="/login"
           toText="Уже есть аккаунт? Войти"
           isLoading={registerMutation.isPending}
           loaderText={"Регистрируем..."}

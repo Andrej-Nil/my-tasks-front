@@ -2,7 +2,6 @@ import {useState} from "react";
 import {TaskCard, useTasks} from "@/entities/task";
 import {Loader} from "@/shared/ui/loader";
 import {Field} from "@/shared/ui/field";
-
 import Pagination from "../pagination/Pagination";
 import './taskList.scss';
 const TasksList = () => {
