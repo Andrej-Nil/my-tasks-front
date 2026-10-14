@@ -1,14 +1,29 @@
-import {useId} from "react";
 import {MdClose} from "react-icons/md";
 import {Button} from "@/shared/ui/button";
 import './modal.scss';
+import {useEffect} from "react";
 const Modal = ({onClose, children}) => {
-    const titleId = useId();
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        }
+
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+
+    }, [onClose])
+
+
     return (
         <div className="modal"
              role="dialog"
              aria-modal="true"
-             aria-labelledby={titleId}
         >
             <div onClick={onClose} className="modal__bg"></div>
             <div className="container middle">

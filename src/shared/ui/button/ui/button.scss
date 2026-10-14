@@ -2,12 +2,12 @@
   display: block;
   background: #ddd;
   outline: none;
-  border: none;
   font-family: var(--main-font);
   font-size: 1.6rem;
-  padding: 11px 20px;
-  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #00000000 ;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   &[disabled]{
     cursor: default;
     opacity: 0.5;
@@ -38,6 +38,11 @@
   &:hover {
     background: var(--light-danger-color);
   }
+  &[disabled]{
+    &:hover{
+      background: var(--danger-color);
+    }
+  }
 }
 
 
@@ -58,7 +63,6 @@
   background: rgba(255, 255, 255, 0);
   border: 1px solid var(--success-color);
   color: var(--success-color);
-  padding: 10px 20px;
   &:hover{
    background: var(--success-color);
    color: #fff;
@@ -66,6 +70,7 @@
   &[disabled]{
     &:hover{
       background: rgba(255, 255, 255, 0);
+      color: var(--success-color);
     }
   }
 }
@@ -73,6 +78,7 @@
 .btn--warning{
   background: var(--warning-color);
   color: var(--main-color);
+  border: 1px solid var(--warning-color);
   &:hover{
     background: var(--light-warning-color);
   }

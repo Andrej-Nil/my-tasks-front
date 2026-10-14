@@ -7,7 +7,8 @@ import {Loader} from "@/shared/ui/loader";
 const TaskPage = () => {
 
     const { taskId } = useParams();
-    const {data: task, isPending, isError} = useTask(taskId);
+    const id = Number(taskId);
+    const {data: task, isPending, isError} = useTask(id);
 
 
     return(

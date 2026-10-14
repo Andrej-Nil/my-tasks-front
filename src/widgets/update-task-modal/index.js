@@ -1,0 +1,1 @@
+export {default as UpdateTaskModal} from './ui/UpdateTaskModal';

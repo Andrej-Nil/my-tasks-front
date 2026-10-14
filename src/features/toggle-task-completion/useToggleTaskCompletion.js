@@ -42,30 +42,53 @@ export const useToggleTaskCompletion = () => {
         },
 
         onMutate: async ({ taskId, isCompleted }) => {
-            await queryClient.cancelQueries({
-                queryKey: ['tasks'],
-            })
+
+
+            await Promise.all([
+                queryClient.cancelQueries({ queryKey: ['tasks'] }),
+                queryClient.cancelQueries({ queryKey: ['task', taskId] }),
+            ]);
 
             const previousTasks = queryClient.getQueryData(['tasks']);
+            const previousTask = queryClient.getQueryData(['task', taskId]);
 
-            queryClient.setQueryData(['tasks'], (oldTasks = []) =>
-                oldTasks.map(task =>
-                    task.id === taskId
-                        ? {...task, is_completed: isCompleted }
-                        : task
-                )
-            );
+            if(previousTasks !== undefined) {
+                queryClient.setQueryData(['tasks'], (oldTasks = []) =>
+                    oldTasks.map(task =>
+                        task.id === taskId
+                            ? {...task, is_completed: isCompleted }
+                            : task
+                    )
+                );
+            }
 
-            return { previousTasks }
+            if(previousTask !== undefined) {
+                queryClient.setQueryData(['task', taskId], {
+                    ...previousTask,
+                    is_completed: isCompleted,
+                })
+            }
+
+
+            return { previousTasks, previousTask, taskId }
         },
         onError: (error, variables, context) => {
-            queryClient.setQueryData(
-                ['tasks'],
-                context.previousTasks
-            );
+            if (!context) return;
+
+            if(context.previousTasks !== undefined){
+                queryClient.setQueryData(['tasks'], context.previousTasks);
+            }
+
+            if(context.previousTask !== undefined) {
+                queryClient.setQueryData(
+                    ['task', context.taskId],
+                    context.previousTask
+                );
+            }
+
         },
         onSuccess: (data) => {
-            console.log(data);
+
         }
 
     });

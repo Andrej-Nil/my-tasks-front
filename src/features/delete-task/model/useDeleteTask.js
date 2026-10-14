@@ -45,6 +45,11 @@ export const useDeleteTask = () => {
                 oldTasks.filter(task => task.id !== taskId)
             )
 
+            queryClient.removeQueries({
+                queryKey: ['task',taskId],
+                exact: true
+            })
+
         }
     })
 }

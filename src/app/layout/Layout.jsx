@@ -3,6 +3,8 @@ import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 import { useUser } from "@/entities/user";
 import { CreateTaskModal } from "@/widgets/create-task-modal";
+import {UpdateTaskModal} from "@/widgets/update-task-modal";
+import {ErrorModal} from "@/shared/ui/error-modal";
 
 const Layout = () => {
 
@@ -20,6 +22,9 @@ const Layout = () => {
             <Footer />
 
             <CreateTaskModal />
+            <UpdateTaskModal />
+            <ErrorModal />
+
         </div>
     )
 }

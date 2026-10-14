@@ -5,5 +5,6 @@ export const useTask = (taskId) => {
     return useQuery({
         queryKey: ['task', taskId],
         queryFn: () => getTask(taskId),
+        enabled: !!taskId
     })
 }

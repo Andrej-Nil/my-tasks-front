@@ -4,7 +4,6 @@ import './task.scss';
 
 const Task = ({task}) => {
     const {id, title, description, is_completed} = task;
-    const color = "#002aff";
     return (
         <div className="task block">
             <div className="task__header">
@@ -42,7 +41,7 @@ const Task = ({task}) => {
 
 
             {/*<div className="task__bottom">*/}
-                <TaskActions tackId={id} isCompleted={is_completed}/>
+                <TaskActions taskId={id} isCompleted={is_completed}/>
 
             {/*</div>*/}
 
