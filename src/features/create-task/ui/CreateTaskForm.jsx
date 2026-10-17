@@ -1,8 +1,9 @@
-import {Form} from "@/shared/ui/form";
-import {Field, TextareaField} from "@/shared/ui/field";
 import {useState} from "react";
 import {useCreateTask} from "../model/useCreateTask";
 import {validationCreateTask} from "../model/validation";
+import {Form} from "@/shared/ui/form";
+import {Field, TextareaField} from "@/shared/ui/field";
+
 
 const CreateTaskForm = () => {
     const [title, setTitle] = useState('');
@@ -17,7 +18,6 @@ const CreateTaskForm = () => {
 
         const validationErrors = validationCreateTask(title);
         setErrors(validationErrors);
-        console.log(validationErrors)
         if(Object.keys(validationErrors).length > 0){
             return;
         }
@@ -39,7 +39,7 @@ const CreateTaskForm = () => {
             noValidate
             title="Создание задачи"
             btnText="Создать"
-            isLoading={null}
+            isLoading={createMutation.isPending}
             loaderText={"Идет создание..."}
             error={errors?.form}
             onSubmit={handleSubmit}

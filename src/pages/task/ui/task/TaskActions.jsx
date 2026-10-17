@@ -34,6 +34,10 @@ const TaskActions = ({taskId, isCompleted}) => {
             );
     }
 
+    const handleOpenUpdateTaskModal = () => {
+        openUpdateTaskModal(taskId);
+    }
+
     const handleDelete = () => {
         deleteTask.mutate(taskId, {
             onSuccess: () => {
@@ -54,7 +58,7 @@ const TaskActions = ({taskId, isCompleted}) => {
     return (
         <div className="task__actions">
             <Button disabled={isPending} onClick={handleToggleComplete} className={isCompleted ? 'btn--success' : 'btn--outline-success'}>Выполнено</Button>
-            <Button disabled={isPending} onClick={openUpdateTaskModal} className="btn--warning">Редактировать</Button>
+            <Button disabled={isPending} onClick={handleOpenUpdateTaskModal} className="btn--warning">Редактировать</Button>
             <Button disabled={isPending} onClick={handleDelete} className="btn--danger">Удалить</Button>
         </div>
     )

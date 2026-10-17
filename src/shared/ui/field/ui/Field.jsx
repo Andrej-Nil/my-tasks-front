@@ -11,6 +11,8 @@ const Field = (props) => {
 
     } = props;
 
+    console.log(inputProps)
+
     return (
         <div className="field">
             {label && <label className="field__label" htmlFor={name}>{label}</label>}
