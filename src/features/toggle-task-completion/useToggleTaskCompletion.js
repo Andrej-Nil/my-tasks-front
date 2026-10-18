@@ -2,7 +2,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {updateTaskCompletion} from "@/entities/task/api/updateTaskCompletion";
 import {UPDATE_TASK_ERRORS} from "./errors";
 
-const getToggleTaskCompletion = (error) => {
+const getToggleTaskCompletionError = (error) => {
     if(error.response) {
         const {status} = error.response;
 
@@ -35,7 +35,7 @@ export const useToggleTaskCompletion = () => {
             try {
                 return await updateTaskCompletion(taskId, isCompleted);
             } catch (error){
-                error.userMessage = getToggleTaskCompletion(error);
+                error.userMessage = getToggleTaskCompletionError(error);
                 throw error;
             }
 

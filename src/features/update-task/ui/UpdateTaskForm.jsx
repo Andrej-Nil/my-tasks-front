@@ -2,25 +2,44 @@ import {useState} from "react";
 import {useTask} from "@/entities/task";
 import {Form} from "@/shared/ui/form";
 import {Field, TextareaField} from "@/shared/ui/field";
+import {useUpdateTask, validationUpdateTaskForm} from "@/features/update-task/model";
 
 
 const UpdateTaskForm = ({taskId}) => {
     const {data: task} = useTask(taskId);
     const [title, setTitle] = useState(task.title || '');
-    const [description, setDescription] = useState(task.title || '');
+    const [description, setDescription] = useState(task.description || '');
     const [errors, setErrors] = useState({});
+
+    const createMutation = useUpdateTask();
 
     const handleSubmit = (e) => {
         setErrors({});
         e.preventDefault();
 
-        const validationErrors = {}
+        const validationErrors = validationUpdateTaskForm(title)
 
         setErrors(validationErrors);
 
         if(Object.keys(validationErrors).length > 0){
             return;
         }
+
+        createMutation.mutate({
+                taskId,
+                data: {
+                    title,
+                    description
+                }
+            },
+            {
+                onError: (error) => {
+                    setErrors((prev) =>( {
+                        ...prev,
+                        form: error?.userMessage
+                    }))
+                }
+            });
     }
 
 
@@ -29,8 +48,8 @@ const UpdateTaskForm = ({taskId}) => {
             noValidate
             title="Редактирование задачи"
             btnText="Сохранить"
-            isLoading={null}
-            loaderText={"Идет создание..."}
+            isLoading={createMutation.isPending}
+            loaderText={"Идет сохранение..."}
             error={errors?.form}
             onSubmit={handleSubmit}
         >

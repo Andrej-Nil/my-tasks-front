@@ -7,6 +7,7 @@ import {LoginPage} from "@/pages/login";
 import {RegistrationPage} from "@/pages/registration";
 import {TasksPage} from "@/pages/tasks";
 import {TaskPage} from "@/pages/task";
+import {NotFoundPage} from "@/pages/not-found";
 
 
 
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Layout />,
         children: [
+
             { index: true, element: <HomePage /> },
 
             {
@@ -29,10 +31,12 @@ export const router = createBrowserRouter([
             {
                 element: <PublicRoute />,
                 children: [
-            { path: 'login', element: <LoginPage /> },
-            { path: 'registration', element: <RegistrationPage /> }
+                    { path: 'login', element: <LoginPage /> },
+                    { path: 'registration', element: <RegistrationPage /> }
                 ]
-            }
+            },
+
+            { path: "*", element: <NotFoundPage /> }
         ]
     }
 ]);
