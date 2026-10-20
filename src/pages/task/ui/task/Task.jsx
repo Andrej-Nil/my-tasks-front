@@ -1,4 +1,4 @@
-import {FaCheckSquare, FaCircle, FaExclamationTriangle} from "react-icons/fa";
+import {FaCheckSquare} from "react-icons/fa";
 import TaskActions from "./TaskActions";
 import './task.scss';
 

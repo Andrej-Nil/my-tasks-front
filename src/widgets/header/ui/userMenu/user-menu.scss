@@ -10,6 +10,25 @@
 }
 
 
+@keyframes blink-loader {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+
+.user-menu-loader{
+  background: #f5f5f5;
+  width: 200px;
+  height: 40px;
+  opacity: 0;
+  animation: blink-loader 0.5s ease-in-out;
+}
+
+
 .user-menu{
   position: relative;
 

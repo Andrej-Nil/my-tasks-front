@@ -1,5 +1,5 @@
 import {CreateShortTask} from "@/features/create-short-task";
-import TasksList from "../task-list/TasksList";
+import Tasks from "../tasks/Tasks";
 import './tasksWrapper.scss';
 const TasksWrapper = () => {
     return (
@@ -7,7 +7,7 @@ const TasksWrapper = () => {
 
            <CreateShortTask />
 
-           <TasksList />
+           <Tasks />
 
         </div>
     )

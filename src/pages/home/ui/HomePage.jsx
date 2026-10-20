@@ -5,7 +5,13 @@ import Dashboard from "./dashboard/Dashboard";
 const HomePage = () => {
     const {data: user} = useUser();
 
-    return user ? <Dashboard/> : <Welcome/>
+    return (
+        <main>
+
+            {user ? <Dashboard/> : <Welcome/>}
+        </main>
+
+    )
 }
 
 export default HomePage;

@@ -1,4 +1,3 @@
-
 import {Button, ButtonLink} from "@/shared/ui/button";
 import './error-block.scss';
 const ErrorBlock = ({title, text, to, textTo, onClick, textOnClickBtn}) => {

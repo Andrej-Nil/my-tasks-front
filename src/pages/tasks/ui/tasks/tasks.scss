@@ -1,17 +1,14 @@
-.tasks-block{
+.tasks{
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.task-list{
-  display: flex;
-  flex-direction: column;
+.tasks__block{
   min-height: 384px;
-  gap: 15px;
 }
 
-.task-list__message{
+.tasks__message{
   text-align: center;
   &.error{
     color: var(--danger-color);

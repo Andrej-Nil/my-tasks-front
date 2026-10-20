@@ -1,9 +1,12 @@
-import {useUser} from "@/entities/user/index.js";
-import AuthMenu from "./AuthMenu.jsx";
-import GuestMenu from "./GuestMenu.jsx";
+import {useUser} from "@/entities/user";
+import AuthMenu from "./AuthMenu";
+import GuestMenu from "./GuestMenu";
 
 const UserMenu = () => {
-    const {data: user} = useUser();
+    const {data: user, isPending} = useUser();
+
+    if(isPending) return null;
+
     return user ? <AuthMenu user={user}/> : <GuestMenu />
 }
 

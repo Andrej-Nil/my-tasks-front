@@ -1,10 +1,12 @@
 import {useState} from "react";
-import {TaskCard, useTasks} from "@/entities/task";
+import {useTasks} from "@/entities/task";
+import {TaskList} from "@/shared/ui/task-list";
 import {Loader} from "@/shared/ui/loader";
 import {Field} from "@/shared/ui/field";
 import Pagination from "../pagination/Pagination";
-import './taskList.scss';
-const TasksList = () => {
+import './tasks.scss';
+
+const Tasks = () => {
     const [searchValue, setSearchValue] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
     const {data: tasks = [], isPending, isError} = useTasks();
@@ -42,24 +44,16 @@ const TasksList = () => {
     }
 
     const renderTasks = () => {
-        if(!tasks.length) {
-            return <p className="task-list__message">Нет задач</p>
-        }
+
         if(!filteredTasks.length) {
-            return <p className="task-list__message">Задачи не найдены</p>
+            return <p className="tasks__message">Задачи не найдены</p>
         }
-       return paginatedTasks.map((item) => {
-           return <TaskCard
-               key={item.id}
-               title={item.title}
-               id={item.id}
-               description={item.description}
-               isCompleted={item.is_completed}
-           />
-       })
+       return (
+           <TaskList tasks={paginatedTasks} />
+       )
     }
     return (
-        <div className="tasks-block">
+        <div className="tasks">
             <Field
                 value={searchValue}
                 onChange={handleSearchChange}
@@ -68,9 +62,9 @@ const TasksList = () => {
                 aria-label="Поиск по задачам"
             />
 
-            <div className="task-list">
+            <div className="tasks__block">
                 {isPending && <Loader text="Загружаем задачи..." />}
-                {isError && <p className="task-list__message error">ошибка</p> }
+                {isError && <p className="tasks__message error">ошибка</p> }
                 {!isPending && !isError && renderTasks()}
             </div>
 
@@ -84,4 +78,4 @@ const TasksList = () => {
     )
 }
 
-export default TasksList;
+export default Tasks;
