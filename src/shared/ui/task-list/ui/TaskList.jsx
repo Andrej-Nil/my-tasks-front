@@ -1,9 +1,9 @@
 import {TaskCard} from "@/entities/task";
 import "./task-list.scss";
-const TaskList = ({tasks}) => {
+const TaskList = ({tasks, emptyListMessage = "Нет задач"}) => {
 
     if(!tasks.length) {
-        return <p className="task-list__message">Нет задач</p>
+        return <p className="task-list__message">{emptyListMessage}</p>
     }
 
     return (

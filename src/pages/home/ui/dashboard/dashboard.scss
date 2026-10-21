@@ -1,3 +1,35 @@
+.dashboard__wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .dashboard__start{
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__title{
+  font-size: 1.8rem;
+  font-family: var(--title-font);
+  text-align: center;
+}
+
+.dashboard__btn{
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard__tasks{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard__list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

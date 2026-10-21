@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import './button.scss';
 
 const ButtonLink = ({to, className, children}) => {
     return(
