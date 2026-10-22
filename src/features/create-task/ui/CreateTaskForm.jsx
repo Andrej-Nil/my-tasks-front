@@ -35,37 +35,40 @@ const CreateTaskForm = () => {
         )
     }
     return (
-        <Form
-            noValidate
-            title="Создание задачи"
-            btnText="Создать"
-            isLoading={createMutation.isPending}
-            loaderText={"Идет создание..."}
-            error={errors?.form}
-            onSubmit={handleSubmit}
-        >
+        <div className="block">
+            <Form
+                noValidate
+                title="Создание задачи"
+                btnText="Создать"
+                isLoading={createMutation.isPending}
+                loaderText={"Идет создание..."}
+                error={errors?.form}
+                onSubmit={handleSubmit}
+            >
 
-            <Field
-                name="title"
-                label="Название задачи"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Название задачи"
-                autoComplete="title"
-                error={errors?.title}
-            />
+                <Field
+                    name="title"
+                    label="Название задачи"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Название задачи"
+                    autoComplete="title"
+                    error={errors?.title}
+                />
 
-            <TextareaField
-                name="description"
-                label="Описание"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Описание"
-                error={errors?.description}
-                autoComplete="description"
+                <TextareaField
+                    name="description"
+                    label="Описание"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Описание"
+                    error={errors?.description}
+                    autoComplete="description"
 
-            />
-        </Form>
+                />
+            </Form>
+        </div>
+
     )
 }
 

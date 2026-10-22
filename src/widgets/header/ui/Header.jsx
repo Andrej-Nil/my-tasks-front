@@ -9,9 +9,9 @@ const Header = () => {
             <div className="header__inner container">
                 <Logo />
                 <HeaderNav />
-
+                <OpenCreateTaskModal />
                 <div className="header-menu">
-                    <OpenCreateTaskModal />
+
                     <UserMenu />
                 </div>
             </div>

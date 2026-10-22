@@ -2,7 +2,7 @@ import {MdClose} from "react-icons/md";
 import {Button} from "@/shared/ui/button";
 import './modal.scss';
 import {useEffect} from "react";
-const Modal = ({onClose, children}) => {
+const Modal = ({onClose, containerSize = "middle",  children, }) => {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -26,8 +26,8 @@ const Modal = ({onClose, children}) => {
              aria-modal="true"
         >
             <div onClick={onClose} className="modal__bg"></div>
-            <div className="container middle">
-                <div className="modal__inner block">
+            <div className={`container ${containerSize}`}>
+                <div className="modal__inner">
                     <Button
                         onClick={onClose}
                         className='btn--base modal-close'

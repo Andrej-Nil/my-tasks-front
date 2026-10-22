@@ -1,6 +1,6 @@
 import {create} from "zustand";
 
-export  const useUpdateTaskModal = create((set) => ({
+export const useUpdateTaskModal = create((set) => ({
     isOpen: false,
 
     taskId: null,

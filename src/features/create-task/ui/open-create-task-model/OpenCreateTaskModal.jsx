@@ -12,7 +12,7 @@ const OpenCreateTaskModal = () => {
     return (
         <Button
             onClick={open}
-            className={'btn--outline-success open-create-task'}
+            className={'open-create-task btn--outline-success'}
         >
             <span className="open-create-task__name">Добавить задачу</span>
             <MdAdd className="open-create-task__plus" aria-hidden="true"/>

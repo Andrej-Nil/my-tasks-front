@@ -30,9 +30,24 @@
 
 
 .user-menu{
-  position: relative;
+  //position: relative;
+ display: flex;
+  gap: 20px;
 
 }
+.user-menu__item{
+  opacity: 0.6;
+  &:hover{
+    opacity: 1;
+  }
+
+}
+.user-menu__icon{
+  font-size: 2rem;
+  color: var(--title-font);
+}
+
+
 
 .user-menu__top{
   padding: 20px 10px;
@@ -47,13 +62,13 @@
   }
 }
 
-.user-menu__icon{
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: #ccc;
-  border-radius: 50%;
-}
+//.user-menu__icon{
+//  display: block;
+//  width: 30px;
+//  height: 30px;
+//  background: #ccc;
+//  border-radius: 50%;
+//}
 
 .user-menu__name{
   margin: 0 3px 0 8px;

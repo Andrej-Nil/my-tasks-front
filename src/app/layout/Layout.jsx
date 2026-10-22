@@ -6,6 +6,7 @@ import { CreateTaskModal } from "@/widgets/create-task-modal";
 import { UpdateTaskModal } from "@/widgets/update-task-modal";
 import { ErrorModal } from "@/shared/ui/error-modal";
 import { LoaderBlock } from "@/shared/ui/loader-block";
+import { ProfileModal } from "@/widgets/profile-modal";
 
 const Layout = () => {
 
@@ -22,6 +23,7 @@ const Layout = () => {
             <CreateTaskModal />
             <UpdateTaskModal />
             <ErrorModal />
+            <ProfileModal />
 
         </div>
     )
