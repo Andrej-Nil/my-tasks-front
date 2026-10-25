@@ -10,7 +10,7 @@ import { ProfileModal } from "@/widgets/profile-modal";
 
 const Layout = () => {
 
-    const { isPending } = useUser();
+    const {data: user,  isPending } = useUser();
 
     return(
         <div className="app">
@@ -23,7 +23,7 @@ const Layout = () => {
             <CreateTaskModal />
             <UpdateTaskModal />
             <ErrorModal />
-            <ProfileModal />
+            <ProfileModal user={user}/>
 
         </div>
     )
