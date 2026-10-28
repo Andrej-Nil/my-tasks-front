@@ -1,11 +1,8 @@
-
 import {useProfileModal} from "@/shared/model/profile-modal";
 import {Modal} from "@/shared/ui/modal";
 import {Logout} from "@/features/logout";
-import './profile.scss';
-import { MdOutlineEdit } from "react-icons/md";
 import {Link} from "react-router-dom";
-import {ButtonLink} from "@/shared/ui/button";
+import './profile.scss';
 const ProfileModal = ({user}) => {
 
     const isOpen = useProfileModal((state) => state.isOpen);
@@ -18,7 +15,7 @@ const ProfileModal = ({user}) => {
         <Modal onClose={close} containerSize="small">
             <div className="profile block">
                 <div className="profile__header">
-                    <h2 className="profile__title">Профил</h2>
+                    <h2 className="h2">Профил</h2>
                 </div>
 
                 <div className="profile__body">

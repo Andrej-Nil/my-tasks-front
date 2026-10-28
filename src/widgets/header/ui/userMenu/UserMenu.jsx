@@ -4,7 +4,6 @@ import GuestMenu from "./GuestMenu";
 
 const UserMenu = () => {
     const {data: user, isPending} = useUser();
-
     if(isPending) return null;
 
     return user ? <AuthMenu user={user}/> : <GuestMenu />

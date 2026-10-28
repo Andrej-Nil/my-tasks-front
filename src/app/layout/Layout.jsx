@@ -7,6 +7,7 @@ import { UpdateTaskModal } from "@/widgets/update-task-modal";
 import { ErrorModal } from "@/shared/ui/error-modal";
 import { LoaderBlock } from "@/shared/ui/loader-block";
 import { ProfileModal } from "@/widgets/profile-modal";
+import {SettingModal} from "@/widgets/setting-modal";
 
 const Layout = () => {
 
@@ -24,6 +25,7 @@ const Layout = () => {
             <UpdateTaskModal />
             <ErrorModal />
             <ProfileModal user={user}/>
+            <SettingModal />
 
         </div>
     )

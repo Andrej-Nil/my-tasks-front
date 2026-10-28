@@ -24,7 +24,7 @@ const Form = (props) => {
 
             {isLoading && <FormLoader text={loaderText} />}
 
-            <p className="form__title">{title}</p>
+            <h2 className="h2">{title}</h2>
 
             {error && <p className="form__error">{error}</p>}
 

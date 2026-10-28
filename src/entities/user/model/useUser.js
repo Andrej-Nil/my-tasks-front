@@ -7,6 +7,5 @@ export const useUser = () => {
         queryKey: ['user'],
         queryFn: getUser,
         retry: false,
-        placeholderData: {}
     })
 }
