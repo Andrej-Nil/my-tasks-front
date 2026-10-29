@@ -1,0 +1,30 @@
+.profile-item__title{
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.profile-item__wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light-bg);
+  border: 1px solid var(--light-bd);
+  padding: 7px 20px;
+
+
+}
+
+.profile-item__edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+
+  &:hover{
+    background: var(--white-color);
+  }
+}

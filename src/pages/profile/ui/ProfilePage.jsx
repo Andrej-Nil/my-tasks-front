@@ -1,5 +1,4 @@
 import Profile from './Profile';
-
 const ProfilePage = () => {
     return(
 

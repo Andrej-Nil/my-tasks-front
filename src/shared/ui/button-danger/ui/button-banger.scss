@@ -1,5 +1,5 @@
 
-.logout__btn{
+.button-danger__btn{
   border: none;
   outline: none;
   font-family: var(--main-font);
@@ -10,24 +10,26 @@
   gap: 10px;
   cursor: pointer;
   width: 100%;
+
   //transition: 0.2s ease-in-out;
   //&:hover{
   //  background: #d7161320;
   //}
 }
 
-.logout__icon{
+.button-danger__icon{
   width: 24px;
   height: 24px;
+  color: var(--danger-color);
 }
 
-.logout__label{
+.button-danger__label{
   font-size: 1.6rem;
   color: var(--danger-color);
 }
 
 
-.logout__error{
+.button-danger__error{
   margin-top: 20px;
   color: var(--danger-color);
   font-size: 1.4rem;

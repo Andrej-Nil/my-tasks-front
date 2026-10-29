@@ -1,6 +1,6 @@
 import {useLogout} from "../model/useLogout";
 import logoutIcon from '@/shared/assets/icons/logout.svg';
-import './logout.scss';
+import {ButtonDanger} from "@/shared/ui/button-danger";
 
 
 
@@ -13,17 +13,11 @@ const Logout = () => {
     }
 
     return (
-        <div className="logout">
-            <button onClick={handleClick} type="button" className="logout__btn">
-                <img src={logoutIcon} alt="" className="logout__icon"/>
-                <span className="logout__label">Выход</span>
-            </button>
-
-            {
-                logoutMutation.error?.userMessage &&
-                <p className="logout__error"> {logoutMutation.error?.userMessage}</p>
-            }
-        </div>
+        <ButtonDanger
+            onClick={handleClick}
+            icon={logoutIcon}
+            text="Выйти из аккаунта"
+            error={logoutMutation.error} />
 
     )
 }

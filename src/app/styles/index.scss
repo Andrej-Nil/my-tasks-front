@@ -2,6 +2,8 @@ $main-font: Arial, Helvetica, sans-serif;
 $title-font: 'Trebuchet MS', sans-serif;
 $main-font-size: 1.6rem;
 
+
+$white-color: #ffffff;
 $main-color: #231F20;
 $light-main-color: #231F20a0;
 
@@ -19,7 +21,11 @@ $light-warning-color: #ffd179;
 
 $light-bd: #ccc;
 
+$light-bg: #f5f5f5;
+
 :root {
+  --white-color: #{$white-color};
+
   --main-font: #{$main-font};
   --title-font: #{$title-font};
   --main-font-size: #{$main-font-size};
@@ -27,7 +33,7 @@ $light-bd: #ccc;
   --main-color: #{$main-color};
   --light-main-color: #{$light-main-color};
 
-  --light-bd: #{$light-bd};
+
 
   --danger-color: #{$danger-color};
   --light-danger-color: #{$light-danger-color};
@@ -41,6 +47,9 @@ $light-bd: #ccc;
   --warning-color: #{$warning-color};
   --light-warning-color: #{$light-warning-color};
 
+  --light-bd: #{$light-bd};
+
+  --light-bg: #{$light-bg};
 }
 
 *{
@@ -62,7 +71,7 @@ body{
   font-family: var(--main-font);
   font-size: var(--main-font-size);
   color: var(--main-color);
-  background: #f5f5f5;
+  background: var(--light-bg);
 }
 
 #root {
