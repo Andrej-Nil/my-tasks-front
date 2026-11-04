@@ -43,7 +43,7 @@ export const useUpdateTask = () => {
     return useMutation({
         mutationFn: async ({taskId, data}) => {
             try{
-                return await updateTask(taskId, data)
+                return await updateTask(taskId, data);
             } catch (error) {
 
                 error.userMessage = getUpdateTaskError(error);

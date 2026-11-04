@@ -2,6 +2,7 @@ import './field.scss';
 
 const Field = (props) => {
     const {
+        ref,
         label,
         isHideLabel,
         name,
@@ -16,6 +17,7 @@ const Field = (props) => {
             {label && <label className="field__label" htmlFor={name}>{label}</label>}
             {error && <p className="field__error">{error}</p>}
             <input
+                ref={ref}
                 className="field__input"
                 type={type}
                 name={name}

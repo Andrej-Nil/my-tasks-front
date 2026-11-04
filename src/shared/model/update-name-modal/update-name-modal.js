@@ -1,5 +1,5 @@
 import {create} from "zustand";
-export const useNameEditModal = create((set) => ({
+export const useUpdateNameModal = create((set) => ({
     isOpen: false,
 
     open: () => set({isOpen: true}),

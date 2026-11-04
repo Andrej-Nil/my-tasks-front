@@ -11,7 +11,7 @@ const UpdateTaskForm = ({taskId}) => {
     const [description, setDescription] = useState(task.description || '');
     const [errors, setErrors] = useState({});
 
-    const createMutation = useUpdateTask();
+    const updateMutation = useUpdateTask();
 
     const handleSubmit = (e) => {
         setErrors({});
@@ -25,7 +25,7 @@ const UpdateTaskForm = ({taskId}) => {
             return;
         }
 
-        createMutation.mutate({
+        updateMutation.mutate({
                 taskId,
                 data: {
                     title,
@@ -48,7 +48,7 @@ const UpdateTaskForm = ({taskId}) => {
             noValidate
             title="Редактирование задачи"
             btnText="Сохранить"
-            isLoading={createMutation.isPending}
+            isLoading={updateMutation.isPending}
             loaderText={"Идет сохранение..."}
             error={errors?.form}
             onSubmit={handleSubmit}
