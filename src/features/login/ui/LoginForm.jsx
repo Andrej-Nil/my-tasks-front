@@ -18,9 +18,7 @@ const LoginForm = () => {
         setErrors({});
 
         const validationErrors = validateLoginForm(email, password);
-
         setErrors(validationErrors);
-
         if(Object.keys(validationErrors).length > 0){
             return;
         }
@@ -37,7 +35,6 @@ const LoginForm = () => {
                 }
             }
         )
-
     }
 
     return (

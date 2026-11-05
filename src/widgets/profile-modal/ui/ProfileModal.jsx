@@ -23,7 +23,7 @@ const ProfileModal = ({user}) => {
                 <div className="profile-modal__body">
                     <UserInfo user={user}/>
                     <Link to="profile" className="profile-modal-link" onClick={close}>
-                        Редарктировать
+                        Страница профиля
                     </Link>
                 </div>
 

@@ -1,9 +1,10 @@
 import {useEffect, useRef, useState} from "react";
+import {useUpdateName, validationUpdateUserName} from "@/features/update-name/model";
 import {useUser} from "@/entities/user";
 import {Form} from "@/shared/ui/form";
 import {Field} from "@/shared/ui/field";
 
-import {useUpdateName, validationUpdateUserName} from "@/features/update-name/model";
+
 
 const UpdateNameForm = () => {
     const {data: user} = useUser();
@@ -23,7 +24,7 @@ const UpdateNameForm = () => {
 
         const validationErrors = validationUpdateUserName(name);
 
-
+        setErrors(validationErrors);
         if(Object.keys(validationErrors).length > 0){
             return;
         }
@@ -39,7 +40,6 @@ const UpdateNameForm = () => {
                 },
             });
     }
-    console.log(errors?.form)
     return (
         <Form
             noValidate

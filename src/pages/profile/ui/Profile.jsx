@@ -5,13 +5,15 @@ import './profile.scss';
 import DeleteProfile from "@/features/delete-profile/ui/DeleteProfile";
 import {useUpdateNameModal} from "@/shared/model/update-name-modal";
 import {UpdateNameModal} from "@/widgets/update-name-modal";
+import {UpdateEmailModal} from "@/widgets/update-email-modal";
+import {useUpdateEmailModal} from "@/shared/model/update-email-modal";
 
 const Profile = () => {
 
     const {data: user} = useUser();
 
     const updateNameModalOpen = useUpdateNameModal((state) => state.open);
-
+    const updateEmailModalOpen = useUpdateEmailModal((state) => state.open);
 
 
     return (
@@ -20,7 +22,7 @@ const Profile = () => {
             <div className="profile__body">
                 <ProfileItem title="Имя" content={user.name} onClick={updateNameModalOpen} />
 
-                <ProfileItem title="Почта" content={user.email} onClick={()=> console.log('Почта')} />
+                <ProfileItem title="Почта" content={user.email} onClick={updateEmailModalOpen} />
 
                 <ProfileItem content="Изменить пароль" onClick={()=> console.log('name')} />
             </div>
@@ -31,9 +33,9 @@ const Profile = () => {
             </div>
 
 
-        <UpdateNameModal />
+            <UpdateNameModal />
 
-
+            <UpdateEmailModal />
         </div>
     )
 }
