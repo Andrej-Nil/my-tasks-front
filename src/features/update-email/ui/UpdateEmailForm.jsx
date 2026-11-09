@@ -60,7 +60,7 @@ const UpdateEmailForm = () => {
                 ref={nameRef}
                 type="email"
                 name="email"
-                label="Ваш email"
+                label="Ваш текущий email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="vasha@pochta.ru"

@@ -1,5 +1,4 @@
 import {UPDATE_EMAIL_ERRORS} from "@/features/update-email/model/errors";
-import {UPDATE_NAME_ERRORS} from "@/features/update-name/model/error";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {useUpdateEmailModal} from "@/shared/model/update-email-modal";
 import {updateEmail} from "@/entities/user";
@@ -9,19 +8,19 @@ const getUpdateEmailError = (error) => {
         const {status} = error.response;
 
         if(status === 403) {
-            return UPDATE_NAME_ERRORS.FORBIDDEN;
+            return UPDATE_EMAIL_ERRORS.FORBIDDEN;
         }
 
         if(status === 404) {
-            return UPDATE_NAME_ERRORS.NOT_FOUND;
+            return UPDATE_EMAIL_ERRORS.NOT_FOUND;
         }
 
         if(status === 422) {
-            return UPDATE_NAME_ERRORS.INVALID_CREDENTIALS;
+            return UPDATE_EMAIL_ERRORS.INVALID_CREDENTIALS;
         }
 
         if(status === 500) {
-            return UPDATE_NAME_ERRORS.SERVER_ERRORS;
+            return UPDATE_EMAIL_ERRORS.SERVER_ERRORS;
         }
 
         return UPDATE_EMAIL_ERRORS.DEFAULT_ERROR;
@@ -54,7 +53,6 @@ export const useUpdateEmail = () => {
         onSuccess: (updateUser, variables) => {
             queryClient.setQueryData(['user'], updateUser);
             closeUpdateEmailModal();
-
         }
     })
 }

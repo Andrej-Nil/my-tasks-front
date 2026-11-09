@@ -7,6 +7,8 @@ import {useUpdateNameModal} from "@/shared/model/update-name-modal";
 import {UpdateNameModal} from "@/widgets/update-name-modal";
 import {UpdateEmailModal} from "@/widgets/update-email-modal";
 import {useUpdateEmailModal} from "@/shared/model/update-email-modal";
+import {useUpdatePasswordModal} from "@/shared/model/update-password-modal";
+import {UpdatePasswordModal} from "@/widgets/update-password-modal";
 
 const Profile = () => {
 
@@ -14,6 +16,7 @@ const Profile = () => {
 
     const updateNameModalOpen = useUpdateNameModal((state) => state.open);
     const updateEmailModalOpen = useUpdateEmailModal((state) => state.open);
+    const updatePasswordModelOpen = useUpdatePasswordModal((state) => state.open)
 
 
     return (
@@ -24,7 +27,7 @@ const Profile = () => {
 
                 <ProfileItem title="Почта" content={user.email} onClick={updateEmailModalOpen} />
 
-                <ProfileItem content="Изменить пароль" onClick={()=> console.log('name')} />
+                <ProfileItem content="Изменить пароль" onClick={updatePasswordModelOpen} />
             </div>
             <div className="profile__bottom">
                 <Logout />
@@ -32,10 +35,13 @@ const Profile = () => {
                 <DeleteProfile />
             </div>
 
-
             <UpdateNameModal />
 
             <UpdateEmailModal />
+
+            <UpdatePasswordModal />
+
+
         </div>
     )
 }
