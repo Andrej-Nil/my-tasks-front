@@ -9,6 +9,8 @@ import {UpdateEmailModal} from "@/widgets/update-email-modal";
 import {useUpdateEmailModal} from "@/shared/model/update-email-modal";
 import {useUpdatePasswordModal} from "@/shared/model/update-password-modal";
 import {UpdatePasswordModal} from "@/widgets/update-password-modal";
+import {useDeleteUserModal} from "@/shared/model/delete-user-modal";
+import {DeleteUserModal} from "@/widgets/delete-user-modal";
 
 const Profile = () => {
 
@@ -17,7 +19,7 @@ const Profile = () => {
     const updateNameModalOpen = useUpdateNameModal((state) => state.open);
     const updateEmailModalOpen = useUpdateEmailModal((state) => state.open);
     const updatePasswordModelOpen = useUpdatePasswordModal((state) => state.open)
-
+    const deleteUserModalOpen = useDeleteUserModal((state) => state.open);
 
     return (
         <div className="profile block">
@@ -32,7 +34,7 @@ const Profile = () => {
             <div className="profile__bottom">
                 <Logout />
 
-                <DeleteProfile />
+                <DeleteProfile onClick={deleteUserModalOpen}/>
             </div>
 
             <UpdateNameModal />
@@ -41,6 +43,7 @@ const Profile = () => {
 
             <UpdatePasswordModal />
 
+            <DeleteUserModal />
 
         </div>
     )

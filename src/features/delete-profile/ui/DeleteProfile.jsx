@@ -1,14 +1,11 @@
 import TrashIcon from '@/shared/assets/icons/trash.svg';
 import {ButtonDanger} from "@/shared/ui/button-danger";
 
-const DeleteProfile = () => {
-
-    const handleClick = () => {
-    }
+const DeleteProfile = ({onClick}) => {
 
     return (
       <ButtonDanger
-        onClick={handleClick}
+        onClick={onClick}
         icon={TrashIcon}
         text="Удалить аккунт"
       />
