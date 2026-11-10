@@ -26,8 +26,6 @@ const getUpdateNameError = (error) => {
         return UPDATE_NAME_ERRORS.DEFAULT_ERROR;
     }
 
-
-
     if(error.request) {
         return UPDATE_NAME_ERRORS.NETWORK_ERROR;
     }

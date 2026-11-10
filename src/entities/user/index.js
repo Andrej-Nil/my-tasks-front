@@ -5,3 +5,4 @@ export { register } from './api/register';
 export { updateName } from './api/updateName';
 export { updateEmail } from './api/updateEmail';
 export { updatePassword } from './api/updatePassword';
+export { deleteUser } from './api/deleteUser';

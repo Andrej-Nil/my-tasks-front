@@ -8,6 +8,7 @@ const Form = (props) => {
         noValidate,
         children,
         title,
+        text,
         btnText,
         to,
         toText = "Перейти",
@@ -25,6 +26,8 @@ const Form = (props) => {
             {isLoading && <FormLoader text={loaderText} />}
 
             <h2 className="h2">{title}</h2>
+
+            {text && <p className="form__message">{text}</p>}
 
             {error && <p className="form__error">{error}</p>}
 
