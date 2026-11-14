@@ -9,6 +9,7 @@ import { LoaderBlock } from "@/shared/ui/loader-block";
 import { ProfileModal } from "@/widgets/profile-modal";
 import {SettingModal} from "@/widgets/setting-modal";
 import {MessageModal} from "@/shared/ui/message-modal";
+import {InformationModal} from "@/shared/ui/information-modal";
 
 const Layout = () => {
 
@@ -31,6 +32,7 @@ const Layout = () => {
 
             <MessageModal />
             <ErrorModal />
+            <InformationModal />
         </div>
     )
 }

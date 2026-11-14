@@ -1,0 +1,1 @@
+export {useInformationModal} from './information-modal';

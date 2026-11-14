@@ -35,13 +35,13 @@ const CreateTaskForm = () => {
         )
     }
     return (
-        <div className="block">
             <Form
                 noValidate
                 title="Создание задачи"
                 btnText="Создать"
                 isLoading={createMutation.isPending}
                 loaderText={"Идет создание..."}
+                className="block"
                 error={errors?.form}
                 onSubmit={handleSubmit}
             >
@@ -67,8 +67,6 @@ const CreateTaskForm = () => {
 
                 />
             </Form>
-        </div>
-
     )
 }
 

@@ -51,6 +51,7 @@ const UpdateTaskForm = ({taskId}) => {
             isLoading={updateMutation.isPending}
             loaderText={"Идет сохранение..."}
             error={errors?.form}
+            className="block"
             onSubmit={handleSubmit}
         >
 

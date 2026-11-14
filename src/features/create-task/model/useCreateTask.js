@@ -2,6 +2,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {createTask} from "@/entities/task/api/createTask";
 import {useCreateTaskModal} from "@/shared/model/create-task-modal";
 import {CREATE_TASK_ERRORS} from "./errors";
+import {useInformationModal} from "@/shared/model/information modal";
 
 const getCreateTaskError = (error) => {
     if (error.response) {
@@ -34,8 +35,8 @@ const getCreateTaskError = (error) => {
 
 export  const useCreateTask = () => {
     const queryClient = useQueryClient();
-    const createTaskModalClose = useCreateTaskModal((state) => state.close);
-
+    const closeCreateTaskModal = useCreateTaskModal((state) => state.close);
+    const openInformationModal = useInformationModal((state) => state.open)
     return useMutation({
         mutationFn: async ({title, description}) => {
             try{
@@ -50,7 +51,8 @@ export  const useCreateTask = () => {
             queryClient.setQueryData(['tasks'], (oldTasks = []) => {
                 return [data.task, ...oldTasks]
             })
-            createTaskModalClose();
+            closeCreateTaskModal();
+            openInformationModal(`Задача ${data.task.title} успешно добавлена!`);
         }
     })
 }
