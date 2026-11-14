@@ -7,12 +7,14 @@ import {Analytics} from "@/widgets/analytics";
 const DashboardContent = ({tasks}) => {
     const filteredTasks = tasks.filter((task) => !task.is_completed);
     const viewTasks = filteredTasks.slice(0, 5);
+
     return (
         <div className='dashboard__wrapper container small'>
 
 
-            {tasks.length ? null : <DashboardStart />}
-            <Analytics />
+            {!tasks.length && <DashboardStart />}
+            {!!tasks.length && <Analytics />}
+
             <div className="dashboard__tasks block">
 
                 <CreateShortTask />

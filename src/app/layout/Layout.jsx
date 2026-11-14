@@ -8,6 +8,7 @@ import { ErrorModal } from "@/shared/ui/error-modal";
 import { LoaderBlock } from "@/shared/ui/loader-block";
 import { ProfileModal } from "@/widgets/profile-modal";
 import {SettingModal} from "@/widgets/setting-modal";
+import {MessageModal} from "@/shared/ui/message-modal";
 
 const Layout = () => {
 
@@ -23,10 +24,13 @@ const Layout = () => {
 
             <CreateTaskModal />
             <UpdateTaskModal />
-            <ErrorModal />
+
             <ProfileModal user={user}/>
+
             <SettingModal />
 
+            <MessageModal />
+            <ErrorModal />
         </div>
     )
 }

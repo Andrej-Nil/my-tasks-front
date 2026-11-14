@@ -2,6 +2,7 @@ import {useMutation, useQueryClient} from "@tanstack/react-query";
 import {DELETE_USER_ERRORS} from "./errors";
 import {deleteUser} from "@/entities/user";
 import {useDeleteUserModal} from "@/shared/model/delete-user-modal";
+import {useMessageModal} from "@/shared/model/message-modal";
 
 const getDeleteUserError = (error) => {
     if(error.response){
@@ -39,6 +40,8 @@ export const useDeleteProfile = () => {
 
     const closeDeleteUserModal = useDeleteUserModal((state) => state.close)
 
+    const openMessageOpen = useMessageModal((state) => state.open)
+
     return useMutation({
         mutationFn: async (password) => {
             try {
@@ -49,9 +52,11 @@ export const useDeleteProfile = () => {
                 throw error;
             }
         },
-        onSuccess: () => {
+        onSuccess: (data) => {
             queryClient.setQueryData(['user'], null);
-
+            queryClient.setQueryData(['tasks'], []);
+            console.log(data)
+            openMessageOpen(data.message)
             closeDeleteUserModal();
         }
     })

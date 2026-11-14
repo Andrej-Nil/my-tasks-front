@@ -6,9 +6,10 @@ import {REGISTER_ERRORS} from "./errors";
 const getRegisterError = (error) => {
     if (error.response) {
         const {status, data} = error.response;
+        console.log(data);
         if (status === 422) {
             if(data.errors?.email?.includes('validation.unique')){
-                throw new Error(REGISTER_ERRORS.EMAIL_ALREADY_EXISTS);
+                return REGISTER_ERRORS.EMAIL_ALREADY_EXISTS;
             }
             return REGISTER_ERRORS.INVALID_CREDENTIALS;
         }

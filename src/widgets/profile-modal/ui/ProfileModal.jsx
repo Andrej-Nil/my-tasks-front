@@ -10,14 +10,16 @@ const ProfileModal = ({user}) => {
     const isOpen = useProfileModal((state) => state.isOpen);
     const close = useProfileModal((state) => state.close);
 
+    if(!user) return null;
     if(!isOpen) return null;
+
 
 
     return (
         <Modal onClose={close} containerSize="small">
             <div className="profile-modal block">
                 <div className="profile-modal__header">
-                    <h2 className="profile__title">Профил</h2>
+                    <h2 className="h2">Профил</h2>
                 </div>
 
                 <div className="profile-modal__body">

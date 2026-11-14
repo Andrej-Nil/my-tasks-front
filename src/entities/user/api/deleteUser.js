@@ -6,5 +6,5 @@ export const deleteUser = async (password) => {
         }
     )
 
-    return response;
+    return response.data;
 }
