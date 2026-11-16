@@ -1,0 +1,49 @@
+.task{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.task__header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.task-info{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.task__title{
+  font-family: var(--title-font);
+  font-size: 2.4rem;
+}
+
+.task-info__icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  &.done{
+    color:var(--success-color);
+  }
+
+  &.important{
+    color:var(--danger-color);
+  }
+}
+
+.task__bottom{
+  display: flex;
+}
+
+
+.task__actions{
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}

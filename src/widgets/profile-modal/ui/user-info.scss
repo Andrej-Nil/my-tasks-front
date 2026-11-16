@@ -1,0 +1,13 @@
+.user-info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-info-item{
+  font-size: 1.8rem;
+}
+
+.user-info-item__label{
+  margin-right: 20px;
+}

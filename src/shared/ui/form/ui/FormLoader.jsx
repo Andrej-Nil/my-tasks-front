@@ -1,9 +1,9 @@
-import FormSpinner from "./FormSpinner.jsx";
+import {Loader} from "@/shared/ui/loader";
 
-const FormLoader = ({onClock}) => {
+const FormLoader = ({text}) => {
     return(
-        <div onClick={onClock} className="form-loader">
-            <FormSpinner />
+        <div className="form-loader">
+            <Loader text={text} />
         </div>
     )
 }

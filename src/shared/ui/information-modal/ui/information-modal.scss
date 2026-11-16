@@ -1,0 +1,33 @@
+.information-modal{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: 1px solid var(--success-color);
+  //border: 1px solid var(--danger-color);
+  padding: 40px;
+  background: var(--white-color);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+
+.information-modal-close{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+
+}
+
+.information-modal-close__icon{
+  color: var(--success-color);
+}
+
+.information-modal__message{
+  font-size: 1.4rem;
+  color: var(--success-color);
+}

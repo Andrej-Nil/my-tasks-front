@@ -1,18 +1,28 @@
 import './field.scss';
 
 const Field = (props) => {
-    const {label, name = "", type = "text", onChange,  placeholder="", autoComplete} = props;
+    const {
+        ref,
+        label,
+        isHideLabel,
+        name,
+        type = "text",
+        error,
+        ...inputProps
+
+    } = props;
+
     return (
         <div className="field">
-            <label className="field__label" htmlFor={name}>{label}</label>
+            {label && <label className="field__label" htmlFor={name}>{label}</label>}
+            {error && <p className="field__error">{error}</p>}
             <input
+                ref={ref}
                 className="field__input"
                 type={type}
                 name={name}
                 id={name}
-                onChange={onChange}
-                placeholder={placeholder}
-                autoComplete={autoComplete}
+                {...inputProps}
             />
         </div>
     )

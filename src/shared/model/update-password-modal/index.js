@@ -1,0 +1,1 @@
+export {useUpdatePasswordModal} from './update-password-modal';

@@ -1,0 +1,17 @@
+.tasks{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tasks__block{
+  min-height: 384px;
+}
+
+.tasks__message{
+  text-align: center;
+  &.error{
+    color: var(--danger-color);
+  }
+}
+

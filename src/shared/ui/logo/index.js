@@ -1,1 +1,1 @@
-export { default } from './ui/Logo.jsx'
+export { default as Logo } from './ui/Logo'

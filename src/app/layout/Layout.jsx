@@ -1,15 +1,38 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from "@/widgets/header/index.js";
-import Footer from "@/widgets/footer/index.js";
+import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
+import { useUser } from "@/entities/user";
+import { CreateTaskModal } from "@/widgets/create-task-modal";
+import { UpdateTaskModal } from "@/widgets/update-task-modal";
+import { ErrorModal } from "@/shared/ui/error-modal";
+import { LoaderBlock } from "@/shared/ui/loader-block";
+import { ProfileModal } from "@/widgets/profile-modal";
+import {SettingModal} from "@/widgets/setting-modal";
+import {MessageModal} from "@/shared/ui/message-modal";
+import {InformationModal} from "@/shared/ui/information-modal";
 
 const Layout = () => {
+
+    const {data: user,  isPending } = useUser();
+
     return(
         <div className="app">
             <Header />
             <div className="content">
-                <Outlet />
+                {isPending ? <LoaderBlock /> : <Outlet />}
             </div>
             <Footer />
+
+            <CreateTaskModal />
+            <UpdateTaskModal />
+
+            <ProfileModal user={user}/>
+
+            <SettingModal />
+
+            <MessageModal />
+            <ErrorModal />
+            <InformationModal />
         </div>
     )
 }

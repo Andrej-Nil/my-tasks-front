@@ -1,25 +1,35 @@
 import './form.scss';
-import Button from "@/shared/ui/button";
+import {Button} from "@/shared/ui/button";
 import {Link} from "react-router-dom";
 import FormLoader from "./FormLoader.jsx";
 
 const Form = (props) => {
     const {
+        noValidate,
         children,
         title,
+        text,
         btnText,
         to,
         toText = "Перейти",
         isLoading,
-        onSubmit} = props;
+        loaderText,
+        error,
+        onSubmit,
+        className
+    } = props;
 
 
     return (
-        <form className="form" onSubmit={onSubmit}>
+        <form noValidate={noValidate} className={`form ${className ? className : ''}`} onSubmit={onSubmit}>
 
-            {isLoading ? <FormLoader onClock={onSubmit}/> : null}
+            {isLoading && <FormLoader text={loaderText} />}
 
-            <p className="form__title">{title}</p>
+            <h2 className="h2">{title}</h2>
+
+            {text && <p className="form__message">{text}</p>}
+
+            {error && <p className="form__error">{error}</p>}
 
             <div className="form__body">
                 {children}
@@ -28,7 +38,7 @@ const Form = (props) => {
             <div className="form__bottom">
                 <Button
                     type="submit"
-                    className="btn--blue"
+                    className="btn--primary"
                 >
                     {btnText}
                 </Button>

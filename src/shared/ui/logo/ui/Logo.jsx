@@ -4,7 +4,7 @@ import  './logo.scss'
 
 const Logo = () => {
     return (
-        <Link to={'/'}>
+        <Link to={"/"}>
             <img src={logoImg} alt="Логотоип" className="logo"/>
         </Link>
     )

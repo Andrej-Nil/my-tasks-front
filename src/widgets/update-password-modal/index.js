@@ -1,0 +1,1 @@
+export {default as UpdatePasswordModal} from "./ui/UpdatePasswordModal";

@@ -1,10 +1,10 @@
-import { LoginForm } from "@/features/login-by-email";
+import { LoginForm } from "@/features/login";
 
 const LoginPage = () => {
     return (
-        <div className="container small">
+        <main className="container small">
             <LoginForm />
-        </div>
+        </main>
     )
 }
 

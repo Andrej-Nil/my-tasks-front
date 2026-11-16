@@ -1,0 +1,1 @@
+export {default as UpdateEmailModal} from './ui/UpdateEmailModal';

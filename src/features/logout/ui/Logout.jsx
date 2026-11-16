@@ -1,26 +1,24 @@
+import {useLogout} from "../model/useLogout";
 import logoutIcon from '@/shared/assets/icons/logout.svg';
-import './logout.scss';
-import { logout } from "../model/logout.js";
-import {useNavigate} from "react-router-dom";
+import {ButtonDanger} from "@/shared/ui/button-danger";
+
+
+
 const Logout = () => {
 
-    const navigate = useNavigate();
-    const handleClick = async () => {
-        try {
-            await logout();
-            // navigate('/', { replace: true });
-        } catch (error){
-            console.log(error)
-        } finally {
+    const logoutMutation = useLogout()
 
-        }
+    const handleClick = () => {
+        logoutMutation.mutate();
     }
 
     return (
-        <button onClick={handleClick} type="button" className="logout">
-            <img src={logoutIcon} alt="" className="logout__icon"/>
-            <span className="logout__label">Выход</span>
-        </button>
+        <ButtonDanger
+            onClick={handleClick}
+            icon={logoutIcon}
+            text="Выйти из аккаунта"
+            error={logoutMutation.error} />
+
     )
 }
 
