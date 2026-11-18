@@ -14,7 +14,7 @@ const Welcome = () => {
                     </div>
 
                     <div className="welcome__bottom">
-                        <ButtonLink to={'login'} className="btn--success">Вход</ButtonLink>
+                        <ButtonLink to={'/sing-in'} className="btn--success">Вход</ButtonLink>
                         <ButtonLink to={'registration'} className="btn--primary">Регистрация</ButtonLink>
                     </div>
 
