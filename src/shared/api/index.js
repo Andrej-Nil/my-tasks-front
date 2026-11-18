@@ -2,7 +2,8 @@ import axios from 'axios';
 import {queryClient} from "./queryClient";
 
 const api = axios.create({
-    baseURL: 'http://api.my-tasks.local',
+    // baseURL: 'http://api.my-tasks.local',
+    baseURL:  window.location.origin,
 
     withCredentials: true,
     withXSRFToken: true,
