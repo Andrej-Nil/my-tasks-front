@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 element: <PublicRoute />,
                 children: [
-                    { path: 'login', element: <LoginPage /> },
+                    { path: 'sing-in', element: <LoginPage /> },
                     { path: 'registration', element: <RegistrationPage /> }
                 ]
             },
